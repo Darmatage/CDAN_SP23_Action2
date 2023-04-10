@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour {
 
+	public static bool torchOn = false;
+
+
       private GameObject player;
       public static int playerHealth = 100;
       public int StartPlayerHealth = 100;
