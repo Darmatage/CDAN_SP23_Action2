@@ -3,8 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameHandler : MonoBehaviour {
+
+
 
 	public static bool torchOn = false;
 
@@ -23,6 +26,8 @@ public class GameHandler : MonoBehaviour {
       //this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
 
       private string sceneName;
+	  
+	  
 
       void Start(){
             player = GameObject.FindWithTag("Player");
