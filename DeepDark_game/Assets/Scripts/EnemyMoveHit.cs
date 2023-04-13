@@ -9,12 +9,13 @@ public class EnemyMoveHit : MonoBehaviour {
        public float speed = 4f;
        private Transform target;
        public int damage = 10;
+	   public float knockBackForce = 20f; 
 
        public int EnemyLives = 3;
        private GameHandler gameHandler;
 
        public float attackRange = 10;
-       public bool isAttacking = false;
+       public bool isAttacking = true;
        private float scaleX;
 
        void Start () {
@@ -47,11 +48,13 @@ public class EnemyMoveHit : MonoBehaviour {
                //else { anim.SetBool("Walk", false);}
        }
 
-       public void OnCollisionEnter2D(Collision2D other){
+        public void OnCollisionEnter2D(Collision2D other){
               if (other.gameObject.tag == "Player") {
                      isAttacking = true;
                      //anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
+                     //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
+                     //StartCoroutine(HitEnemy());
               }
        }
 
@@ -66,4 +69,8 @@ public class EnemyMoveHit : MonoBehaviour {
        void OnDrawGizmosSelected(){
               Gizmos.DrawWireSphere(transform.position, attackRange);
        }
+	    IEnumerator EndKnockBack(Rigidbody2D otherRB){
+              yield return new WaitForSeconds(0.2f);
+              otherRB.velocity= new Vector3(0,0,0);
+       } 
 }
