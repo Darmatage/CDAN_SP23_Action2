@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4271106182034851159}
   - component: {fileID: 6265518380248447815}
   - component: {fileID: 8863189920105574454}
+  - component: {fileID: 6327919517031785569}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -170,6 +171,20 @@ MonoBehaviour:
   colorGone: {r: 0, g: 0, b: 0, a: 0}
   colorBack: {r: 0, g: 0, b: 0, a: 1}
   Tilemap_Lines: {fileID: 0}
+--- !u!114 &6327919517031785569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941471800185110632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2234b1aab15fb39499aaec031fc1a30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameHandler: {fileID: 8001966805577599938, guid: 839de8e9e20fe3f40901bbd93a340f1f, type: 3}
+  pSpawn: {fileID: 9006918025757463963, guid: 4f2a67e2b005db045a19185de3d5a7ad, type: 3}
 --- !u!1 &6941471801206099881
 GameObject:
   m_ObjectHideFlags: 0
