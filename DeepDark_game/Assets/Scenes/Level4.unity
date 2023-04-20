@@ -13174,6 +13174,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1138760162467375543, guid: 917ffb92651d80749b66a8f88bff89be, type: 3}
+      propertyPath: NextLevel
+      value: EndWin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138760162467375543, guid: 917ffb92651d80749b66a8f88bff89be, type: 3}
+      propertyPath: canPressE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138760162467375543, guid: 917ffb92651d80749b66a8f88bff89be, type: 3}
+      propertyPath: msgPressE
+      value: 
+      objectReference: {fileID: 1774031896}
     - target: {fileID: 9148257532198839523, guid: 917ffb92651d80749b66a8f88bff89be, type: 3}
       propertyPath: m_Name
       value: Interactable_Door
@@ -13228,6 +13240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917ffb92651d80749b66a8f88bff89be, type: 3}
+--- !u!1 &1774031896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9148257532971748828, guid: 917ffb92651d80749b66a8f88bff89be, type: 3}
+  m_PrefabInstance: {fileID: 1774031895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1832138750
 GameObject:
   m_ObjectHideFlags: 0
@@ -13415,7 +13432,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2138663096
 MonoBehaviour:

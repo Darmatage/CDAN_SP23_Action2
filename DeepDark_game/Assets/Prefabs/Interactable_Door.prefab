@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9148257532198839525}
   - component: {fileID: 9148257532198839524}
-  - component: {fileID: 9148257532198839526}
+  - component: {fileID: 1138760162467375543}
   m_Layer: 0
   m_Name: Interactable_Door
   m_TagString: Untagged
@@ -61,7 +61,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6984634, y: 2.079445}
   m_EdgeRadius: 0
---- !u!114 &9148257532198839526
+--- !u!114 &1138760162467375543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,10 +70,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9148257532198839523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4674a3282e522174ea42e55fdd881630, type: 3}
+  m_Script: {fileID: 11500000, guid: 056ce29f690f5484baf70166adc4d2d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: Level4
+  NextLevel: MainMenu
+  msgPressE: {fileID: 0}
+  canPressE: 0
 --- !u!1 &9148257532971748828
 GameObject:
   m_ObjectHideFlags: 0
