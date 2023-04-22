@@ -4,41 +4,63 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour{
 
-      public GameHandler gameHandler;
+      private GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
-      public bool isHealthPickUp = true;
-      public bool isSpeedBoostPickUp = false;
+	  
+	  public bool isTorch = true;
+      public bool isHelmet = false;
+      public bool isBattery = false;
+      public bool isHealth = false;
+	  public bool isSpore = false;
+	  
+	  public int healthBoost = 10;
 
-      public int healthBoost = 50;
-      public float speedBoost = 2f;
-      public float speedTime = 2f;
 
       void Start(){
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
             //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
       }
 
-      public void OnTriggerEnter2D (Collider2D other){
-            if (other.gameObject.tag == "Player"){
-                  GetComponent<Collider2D>().enabled = false;
-                  GetComponent<AudioSource>().Play();
-                  StartCoroutine(DestroyThis());
+	public void OnTriggerEnter2D (Collider2D other){
+		if (other.gameObject.tag == "Player"){
+			GetComponent<Collider2D>().enabled = false;
+			//GetComponent<AudioSource>().Play();
+			StartCoroutine(DestroyThis());
 
-                  if (isHealthPickUp == true) {
-                        gameHandler.playerGetHit(healthBoost * -1);
-                        //playerPowerupVFX.powerup();
-                  }
+			if (isTorch == true) {
+				gameHandler.GetComponent<GameInventory>().InventoryAdd("item1");
+			}
 
-             //     if (isSpeedBoostPickUp == true) {
-             //           other.gameObject.GetComponent<PlayerMove>().speedBoost(speedBoost, speedTime);
-            //            //playerPowerupVFX.powerup();
-              //    }
-            }
-      }
+			else if (isHelmet == true) {
+				gameHandler.GetComponent<GameInventory>().InventoryAdd("item2");
+			}
+			
+			else if (isBattery == true) {
+				gameHandler.GetComponent<GameInventory>().InventoryAdd("item3");
+			}
 
-      IEnumerator DestroyThis(){
-            yield return new WaitForSeconds(0.3f);
-            Destroy(gameObject);
-      }
+			else if (isHealth == true) {
+				if (GameHandler.playerHealth < gameHandler.StartPlayerHealth){
+					gameHandler.playerGetHit(healthBoost * -1);
+				} else {
+					gameHandler.GetComponent<GameInventory>().InventoryAdd("item4");
+				}
+				
+				//playerPowerupVFX.powerup();
+			}
+
+			else if (isSpore == true) {
+				gameHandler.GetComponent<GameInventory>().InventoryAdd("item5");
+			}
+			
+			else {Debug.Log("This pickup gave you nothing!");}
+
+		}
+	}
+
+	IEnumerator DestroyThis(){
+		yield return new WaitForSeconds(0.3f);
+		Destroy(gameObject);
+	}
 
 }

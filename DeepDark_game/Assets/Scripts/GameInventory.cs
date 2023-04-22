@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameInventory : MonoBehaviour {
       public GameObject InventoryMenu;
+	  private GameHandler gameHandler;
+	  private GameObject player;
       //public GameObject CraftMenu;
       public bool InvIsOpen = false;
 
@@ -42,7 +44,9 @@ public class GameInventory : MonoBehaviour {
       // public GameObject buttonCraft1; // weapon1 creation
  
       void Start(){
-            InventoryMenu.SetActive(true);
+            InventoryMenu.SetActive(false);
+			gameHandler = GetComponent<GameHandler>();
+			player = GameObject.FindWithTag("Player");
             //CraftMenu.SetActive(false);
             InventoryDisplay();
       }
@@ -150,5 +154,43 @@ public class GameInventory : MonoBehaviour {
             item4num = 0; // object name
             item5num = 0; // object name
       }
+	  
+	  
+	public void InvItem1Button(){
+		  //torch
+		  if (GameHandler.torchOn == false){
+			InventoryRemove("item1", 1);
+			player.GetComponent<PlayerTorch>().ActivateTorch();
+		  }
+		  else {
+			 Debug.Log("You already have a lit torch"); 
+		  }
+	}
+	public void InvItem2Button(){
+		  //helmet
+		  InventoryRemove("item2", 1);
+	}
+	public void InvItem3Button(){
+		  //battery
+		  InventoryRemove("item3", 1);
+	}
+	public void InvItem4Button(){
+		  //heart
+		if (GameHandler.playerHealth < gameHandler.StartPlayerHealth){
+			gameHandler.playerGetHit(10 * -1);
+			InventoryRemove("item4", 1);
+		} else {
+			Debug.Log("You already have full health");
+		}
+	}
+	public void InvItem5Button(){
+		  //spore
+		  if (GameHandler.isNearHolyMushroom==true){
+			  InventoryRemove("item5", 1);
+		  } else {
+			  Debug.Log("You have to be near the holy mushroom to use a spore");
+		}
+	}
+	  
 
 }

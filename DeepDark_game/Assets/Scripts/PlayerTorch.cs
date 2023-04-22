@@ -6,7 +6,6 @@ public class PlayerTorch : MonoBehaviour{
 	
 	public GameObject torchHand;
 	
-	
 	void Start(){
 		if (GameHandler.torchOn == false){
         torchHand.SetActive(false); 
@@ -14,22 +13,27 @@ public class PlayerTorch : MonoBehaviour{
 		
 	}
 	
-	
     void Update(){
-        
 		if (Input.GetKeyDown("t")){
             if (GameHandler.torchOn == false){
-				GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
-				GameHandler.torchOn = true;
-                torchHand.SetActive(true);
+				ActivateTorch();
             }else{
-                GameHandler.torchOn = false;
-                torchHand.SetActive(false);            
+                SnuffTorch();           
             }
         }
-		
-		
     }
+	
+	public void ActivateTorch(){
+		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
+		GameHandler.torchOn = true;
+        torchHand.SetActive(true);
+	}
+	
+	public void SnuffTorch(){
+		GameHandler.torchOn = false;
+        torchHand.SetActive(false); 
+	}
+	
 	
 	
 }
