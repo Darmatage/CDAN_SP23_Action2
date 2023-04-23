@@ -34,6 +34,10 @@ public class PlayerTorch : MonoBehaviour{
         torchHand.SetActive(false); 
 	}
 	
-	
+	void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "Water"){
+			SnuffTorch();
+		}
+	}
 	
 }
