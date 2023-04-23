@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyMoveHit : MonoBehaviour {
 
-	public Animator anim;
-	public Rigidbody2D rb2D;
+	public Animator anim1;
+	public Animator anim2;
+	private Rigidbody2D rb2D;
 	public float speed = 4f;
 	private Transform target;
 	public int damage = 10;
@@ -22,7 +23,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	public bool isStunned = false;
 
 	void Start () {
-		anim = GetComponentInChildren<Animator> ();
+		//anim = GetComponentInChildren<Animator> ();
 		rb2D = GetComponent<Rigidbody2D> ();
 		scaleX = gameObject.transform.localScale.x;
 
@@ -40,7 +41,8 @@ public class EnemyMoveHit : MonoBehaviour {
 
 		if ((target != null) && (DistToPlayer <= attackRange) && (!isStunned)){
 			transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
-			anim.SetBool("walk", true);
+			anim1.SetBool("walk", true);
+			anim2.SetBool("walk", true);
 			//flip enemy to face player direction. Wrong direction? Swap the * -1.
 			if (target.position.x > gameObject.transform.position.x){
 				gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
@@ -48,18 +50,22 @@ public class EnemyMoveHit : MonoBehaviour {
 				gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
 			}
 		}
-		else { anim.SetBool("walk", false);}
+		else { 
+			anim1.SetBool("walk", false);
+			anim2.SetBool("walk", false);
+		}
 	}
 
 	public void OnCollisionEnter2D(Collision2D other){
 		if ((other.gameObject.tag == "Player") && (!isStunned)) {
 			isAttacking = true;
-			anim.SetTrigger("attack");
+			anim1.SetTrigger("attack");
+			anim2.SetTrigger("attack");
 			gameHandler.playerGetHit(damage);
 			//rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
 			//StartCoroutine(HitEnemy());
 
-		//This method adds force to the player, pushing them back without teleporting (choose above or below).
+		//This method adds force to the player, pushing them back without teleporting.
 			Rigidbody2D pushRB = other.gameObject.GetComponent<Rigidbody2D>();
 			Vector2 moveDirectionPush = rb2D.transform.position - other.transform.position;
 			pushRB.AddForce(moveDirectionPush.normalized * knockBackForce * - 1f, ForceMode2D.Impulse);
@@ -83,14 +89,16 @@ public class EnemyMoveHit : MonoBehaviour {
 	public void StunMole(){
 		if (isMole == true){
 			isStunned = true;
-			anim.SetBool("stun", true);
+			anim1.SetBool("stun", true);
+			anim2.SetBool("stun", true);
 		}
 	}
 	
 	public void UnstunMole(){
 		if (isMole == true){
 			isStunned = false;
-			anim.SetBool("stun", false);
+			anim1.SetBool("stun", false);
+			anim2.SetBool("stun", true);
 		}
 	}
 	   

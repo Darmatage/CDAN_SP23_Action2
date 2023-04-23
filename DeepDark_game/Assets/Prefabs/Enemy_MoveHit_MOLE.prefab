@@ -222,7 +222,8 @@ GameObject:
   - component: {fileID: 4145893897403434338}
   - component: {fileID: 4145893897403434341}
   - component: {fileID: 4145893897403434340}
-  m_Layer: 0
+  - component: {fileID: 8856239362455176706}
+  m_Layer: 6
   m_Name: Enemy_MoveHit_MOLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,8 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5def762dd6071424f9a998c32f17fce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  rb2D: {fileID: 0}
+  anim1: {fileID: 4145893897355806048}
+  anim2: {fileID: 5877910649554268573}
   speed: 2
   damage: 10
   knockBackForce: 20
@@ -315,3 +316,20 @@ MonoBehaviour:
   isAttacking: 1
   isMole: 1
   isStunned: 0
+--- !u!114 &8856239362455176706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145893897403434343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567bf47e3d192a1408ee14f486ce8905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim1: {fileID: 4145893897355806048}
+  anim2: {fileID: 5877910649554268573}
+  healthLoot: {fileID: 2052971184734397616, guid: 6ab053facac4a0541bfd0863b38e431e, type: 3}
+  maxHealth: 100
+  currentHealth: 0
