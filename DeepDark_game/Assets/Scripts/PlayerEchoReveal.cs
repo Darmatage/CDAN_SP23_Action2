@@ -8,7 +8,7 @@ public class PlayerEchoReveal : MonoBehaviour{
        public Tilemap destructableTilemap;
        private List<Vector3> tileWorldLocations;
        public float rangeDestroy = 2f;
-       public bool canExplode = true;
+       //public bool canExplode = true;
        //public GameObject boomFX;
 	   public Color colorGone;
 	   public Color colorBack;
@@ -22,7 +22,7 @@ public class PlayerEchoReveal : MonoBehaviour{
        }
 
        void Update(){
-              if ((Input.GetKeyDown("space")) && (canExplode == true) && (GameHandler.torchOn == false)){
+              if ((Input.GetKeyDown("space"))&&(GameHandler.torchOn == false)&&(GameHandler.canEcho)){
 				  Tilemap_Lines.SetActive(true);
                   destroyTileArea();
               }

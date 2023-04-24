@@ -168,7 +168,14 @@ public class GameInventory : MonoBehaviour {
 	}
 	public void InvItem2Button(){
 		  //helmet
-		  InventoryRemove("item2", 1);
+		  if (GameHandler.helmetOn == false){
+			InventoryRemove("item2", 1);
+			player.GetComponent<PlayerTorch>().HelmetTurnOn();
+		  }
+		  else {
+			 Debug.Log("You already have a helmet"); 
+		  }
+		  
 	}
 	public void InvItem3Button(){
 		  //battery
