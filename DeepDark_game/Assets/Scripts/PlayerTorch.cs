@@ -6,24 +6,24 @@ public class PlayerTorch : MonoBehaviour{
 	
 	public GameObject torchHand;
 	public GameObject minerHelmet;
-	private GameHandler gameHandler;
+	//private GameHandler gameHandler;
 	
 	void Start(){
-		if (GameHandler.torchOn == false){
+		if (GameHandler_Lights.torchOn == false){
         torchHand.SetActive(false); 
 		} else {torchHand.SetActive(true);} 
 		
-		if (GameHandler.helmetOn == false){
+		if (GameHandler_Lights.helmetOn == false){
         minerHelmet.SetActive(false); 
 		} else {minerHelmet.SetActive(true);} 
 		
-		gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+		//gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
 		
 	}
 	
     void Update(){
 		if (Input.GetKeyDown("t")){
-            if (GameHandler.torchOn == false){
+            if (GameHandler_Lights.torchOn == false){
 				ActivateTorch();
             }else{
                 SnuffTorch();           
@@ -31,7 +31,7 @@ public class PlayerTorch : MonoBehaviour{
         }
 		
 		if (Input.GetKeyDown("m")){
-            if (GameHandler.helmetOn == false){
+            if (GameHandler_Lights.helmetOn == false){
 				HelmetTurnOn();
             }else{
                 HelmetTurnOff();           
@@ -43,13 +43,12 @@ public class PlayerTorch : MonoBehaviour{
 	//torch functions
 	public void ActivateTorch(){
 		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
-		GameHandler.torchOn = true;
+		GameHandler_Lights.torchOn = true;
         torchHand.SetActive(true);
-		gameHandler.TorchTimer();
 	}
 	
 	public void SnuffTorch(){
-		GameHandler.torchOn = false;
+		GameHandler_Lights.torchOn = false;
         torchHand.SetActive(false); 
 	}
 	
@@ -62,13 +61,12 @@ public class PlayerTorch : MonoBehaviour{
 	//helmet functions
 	public void HelmetTurnOn(){
 		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
-		GameHandler.helmetOn = true;
+		GameHandler_Lights.helmetOn = true;
         minerHelmet.SetActive(true);
-		gameHandler.HelmetTimer();
 	}
 	
 	public void HelmetTurnOff(){
-		GameHandler.helmetOn = false;
+		GameHandler_Lights.helmetOn = false;
         minerHelmet.SetActive(false); 
 	}
 	

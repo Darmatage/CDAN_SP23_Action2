@@ -22,7 +22,7 @@ public class PlayerEchoReveal : MonoBehaviour{
        }
 
        void Update(){
-              if ((Input.GetKeyDown("space"))&&(GameHandler.torchOn == false)&&(GameHandler.canEcho)){
+              if ((Input.GetKeyDown("space"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.canEcho)){
 				  Tilemap_Lines.SetActive(true);
                   destroyTileArea();
               }

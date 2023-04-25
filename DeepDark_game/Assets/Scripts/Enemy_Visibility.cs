@@ -18,7 +18,7 @@ public class Enemy_Visibility : MonoBehaviour{
     void Update(){
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
 		
-		if ((distanceToPlayer <= visibilityThreshold)&&(GameHandler.torchOn == true)){
+		if ((distanceToPlayer <= visibilityThreshold)&&(GameHandler_Lights.torchOn == true)){
 			enemySprite.color = new Color(2.55f, 2.55f, 2.55f, 1f);
 		}
 		else {

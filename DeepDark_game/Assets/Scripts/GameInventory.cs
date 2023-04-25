@@ -158,7 +158,7 @@ public class GameInventory : MonoBehaviour {
 	  
 	public void InvItem1Button(){
 		  //torch
-		  if (GameHandler.torchOn == false){
+		  if (GameHandler_Lights.torchOn == false){
 			InventoryRemove("item1", 1);
 			player.GetComponent<PlayerTorch>().ActivateTorch();
 		  }
@@ -168,19 +168,27 @@ public class GameInventory : MonoBehaviour {
 	}
 	public void InvItem2Button(){
 		  //helmet
-		  if (GameHandler.helmetOn == false){
+		 // if (GameHandler_Lights.helmetOn == false){
 			InventoryRemove("item2", 1);
 			player.GetComponent<PlayerTorch>().HelmetTurnOn();
-		  }
-		  else {
-			 Debug.Log("You already have a helmet"); 
-		  }
+			GameHandler_Lights.helmetOnHead = true;
+		 // }
+		 //else {
+		// Debug.Log("You already have a helmet"); 
+		 //}
 		  
 	}
 	public void InvItem3Button(){
-		  //battery
-		  InventoryRemove("item3", 1);
+		//battery
+		if (GameHandler_Lights.helmetOnHead==true){
+			InventoryRemove("item3", 1);
+			GetComponent<GameHandler_Lights>().timerHelmet = 0; //refills the helmet charge
+			player.GetComponent<PlayerTorch>().HelmetTurnOn();
+		} else {
+			Debug.Log("put the helmet on to charge it with a battery");
+		}
 	}
+	
 	public void InvItem4Button(){
 		  //heart
 		if (GameHandler.playerHealth < gameHandler.StartPlayerHealth){
@@ -199,5 +207,18 @@ public class GameInventory : MonoBehaviour {
 		}
 	}
 	  
+	  
+	public void ReturnTorchToInventory(){
+		InventoryAdd("item1");
+		player.GetComponent<PlayerTorch>().SnuffTorch();
+		GetComponent<GameHandler_Lights>().TurnOffTorchDisplay();
+	}  
+	  
+	public void ReturnHelmetToInventory(){
+		InventoryAdd("item2");
+		player.GetComponent<PlayerTorch>().HelmetTurnOff();
+		GetComponent<GameHandler_Lights>().TurnOffHelmetDisplay();
+		GameHandler_Lights.helmetOnHead = false;
+	}   
 
 }

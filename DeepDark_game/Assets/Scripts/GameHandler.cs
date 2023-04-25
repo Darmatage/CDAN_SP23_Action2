@@ -7,14 +7,7 @@ using UnityEngine.Audio;
 
 public class GameHandler : MonoBehaviour {
 
-	public static bool torchOn = false;
-	public static bool helmetOn = false;
 	public static bool isNearHolyMushroom = false;
-
-	public static bool canEcho = true;
-	private float timerEcho = 0;
-	private float timeToNextEcho = 0.5f;
-
 
 	private GameObject player;
 	public static int playerHealth = 100;
@@ -70,19 +63,6 @@ public class GameHandler : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate(){
-		//Echo Timer
-		if (canEcho == false){
-			if (timerEcho < timeToNextEcho){
-				timerEcho += 0.01f;
-			} else {
-				canEcho = true;
-				timerEcho = 0;
-			}
-		}
-		
-		
-	}
 
 	void Pause(){
 		pauseMenuUI.SetActive(true);
@@ -106,15 +86,6 @@ public class GameHandler : MonoBehaviour {
 		updateStatsDisplay();
 	}
 
-	public void TorchTimer(){
-		
-		
-	}
-
-	public void HelmetTimer(){
-		
-		
-	}
 
 	public void playerGetHit(int damage){
 		if (isDefending == false){

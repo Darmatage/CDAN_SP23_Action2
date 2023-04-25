@@ -81,6 +81,18 @@ public class EnemyMoveHit : MonoBehaviour {
               }
        }
 	   
+	public void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag=="HelmetLight"){
+			StunMole();
+		}
+	}
+	   
+	public void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.tag=="HelmetLight"){
+			UnstunMole();
+		}
+	}   
+	   
 	    IEnumerator EndKnockBack(Rigidbody2D otherRB){
               yield return new WaitForSeconds(0.2f);
               otherRB.velocity= new Vector3(0,0,0);
@@ -98,7 +110,7 @@ public class EnemyMoveHit : MonoBehaviour {
 		if (isMole == true){
 			isStunned = false;
 			anim1.SetBool("stun", false);
-			anim2.SetBool("stun", true);
+			anim2.SetBool("stun", false);
 		}
 	}
 	   

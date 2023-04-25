@@ -8,6 +8,7 @@ TagManager:
   - PauseMenuSlider
   - Door
   - Water
+  - HelmetLight
   layers:
   - Default
   - TransparentFX

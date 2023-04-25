@@ -32,11 +32,14 @@ public class PickUp : MonoBehaviour{
 			}
 
 			else if (isHelmet == true) {
-				gameHandler.GetComponent<GameInventory>().InventoryAdd("item2");
+				//only one helmet:
+				if ((GameInventory.item2num == 0)&&(GameHandler_Lights.helmetOnHead==false)){
+					gameHandler.GetComponent<GameInventory>().InventoryAdd("item2");
+				}
 			}
 			
 			else if (isBattery == true) {
-				gameHandler.GetComponent<GameInventory>().InventoryAdd("item3");
+					gameHandler.GetComponent<GameInventory>().InventoryAdd("item3");
 			}
 
 			else if (isHealth == true) {

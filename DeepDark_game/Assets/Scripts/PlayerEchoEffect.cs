@@ -19,10 +19,10 @@ public class PlayerEchoEffect : MonoBehaviour{
     void Update(){
 		//listener, activate waveVFX
 		
-        if ((Input.GetKeyDown("space"))&&(GameHandler.torchOn == false)&&(GameHandler.canEcho)){
+        if ((Input.GetKeyDown("space"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.canEcho)){
 			GameObject newWave = Instantiate (circleWaveVFX, transform.position, Quaternion.identity);
 			StartCoroutine(EchoWave(newWave));
-			GameHandler.canEcho = false;
+			GameHandler_Lights.canEcho = false;
 		}
     }
 	
