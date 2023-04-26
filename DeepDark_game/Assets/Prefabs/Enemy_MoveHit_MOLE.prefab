@@ -330,6 +330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim1: {fileID: 4145893897355806048}
   anim2: {fileID: 5877910649554268573}
-  healthLoot: {fileID: 2052971184734397616, guid: 6ab053facac4a0541bfd0863b38e431e, type: 3}
+  healthLoot: {fileID: 7382407397773012950, guid: 7cbb9d4ecb9f53149a064f63ac5d93bf, type: 3}
   maxHealth: 100
   currentHealth: 0
