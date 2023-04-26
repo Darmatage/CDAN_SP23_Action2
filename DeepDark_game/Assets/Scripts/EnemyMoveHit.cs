@@ -21,7 +21,11 @@ public class EnemyMoveHit : MonoBehaviour {
 
 	public bool isMole = true;
 	public bool isStunned = false;
-	
+	public AudioSource slime_walk;
+	public AudioSource slime_attack;
+	public AudioSource mole_attack;
+
+
 	
 	
 
@@ -64,7 +68,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D other){
 		if ((other.gameObject.tag == "Player") && (!isStunned)) {
 			isAttacking = true;
-			
+			 
 			anim1.SetTrigger("attack");
 			anim2.SetTrigger("attack");
 			gameHandler.playerGetHit(damage);

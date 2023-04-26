@@ -6,6 +6,8 @@ public class PlayerTorch : MonoBehaviour{
 	
 	public GameObject torchHand;
 	public GameObject minerHelmet;
+	public AudioSource torch_turnOn;
+	public AudioSource miner_hat_onOff;
 	//private GameHandler gameHandler;
 	
 	void Start(){
@@ -13,9 +15,11 @@ public class PlayerTorch : MonoBehaviour{
         torchHand.SetActive(false); 
 		} else {torchHand.SetActive(true);} 
 		
+		
 		if (GameHandler_Lights.helmetOn == false){
         minerHelmet.SetActive(false); 
 		} else {minerHelmet.SetActive(true);} 
+		
 		
 		//gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
 		
@@ -25,6 +29,7 @@ public class PlayerTorch : MonoBehaviour{
 		if (Input.GetKeyDown("t")){
             if (GameHandler_Lights.torchOn == false){
 				ActivateTorch();
+				torch_turnOn.Play();
             }else{
                 SnuffTorch();           
             }
@@ -33,6 +38,7 @@ public class PlayerTorch : MonoBehaviour{
 		if (Input.GetKeyDown("m")){
             if (GameHandler_Lights.helmetOn == false){
 				HelmetTurnOn();
+				miner_hat_onOff.Play();
             }else{
                 HelmetTurnOff();           
             }

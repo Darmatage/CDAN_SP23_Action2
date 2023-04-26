@@ -12,7 +12,8 @@ public class PlayerAttackMelee : MonoBehaviour{
       public int attackDamage = 40;
       public LayerMask enemyLayers;
 	  public float knockBackForce = 5f;
-
+	  public AudioSource player_attack;
+	// public AudioSource punch;
       void Start(){
            //anim = gameObject.GetComponentInChildren<Animator>();
       }
@@ -23,6 +24,8 @@ public class PlayerAttackMelee : MonoBehaviour{
                  if (Input.GetAxis("Attack") > 0){
                         Attack();
                         nextAttackTime = Time.time + 1f / attackRate;
+						player_attack.Play(); 
+						
                   }
             }
       }

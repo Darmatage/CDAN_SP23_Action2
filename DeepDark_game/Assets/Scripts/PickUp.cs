@@ -14,6 +14,7 @@ public class PickUp : MonoBehaviour{
 	  public bool isSpore = false;
 	  
 	  public int healthBoost = 10;
+	  public AudioSource pickup;
 
 
       void Start(){
@@ -29,17 +30,20 @@ public class PickUp : MonoBehaviour{
 
 			if (isTorch == true) {
 				gameHandler.GetComponent<GameInventory>().InventoryAdd("item1");
+				pickup.Play();
 			}
 
 			else if (isHelmet == true) {
 				//only one helmet:
 				if ((GameInventory.item2num == 0)&&(GameHandler_Lights.helmetOnHead==false)){
 					gameHandler.GetComponent<GameInventory>().InventoryAdd("item2");
+					pickup.Play();
 				}
 			}
 			
 			else if (isBattery == true) {
 					gameHandler.GetComponent<GameInventory>().InventoryAdd("item3");
+					pickup.Play();
 			}
 
 			else if (isHealth == true) {
@@ -47,6 +51,7 @@ public class PickUp : MonoBehaviour{
 					gameHandler.playerGetHit(healthBoost * -1);
 				} else {
 					gameHandler.GetComponent<GameInventory>().InventoryAdd("item4");
+					pickup.Play();
 				}
 				
 				//playerPowerupVFX.powerup();
@@ -54,6 +59,7 @@ public class PickUp : MonoBehaviour{
 
 			else if (isSpore == true) {
 				gameHandler.GetComponent<GameInventory>().InventoryAdd("item5");
+				pickup.Play();
 			}
 			
 			else {Debug.Log("This pickup gave you nothing!");}

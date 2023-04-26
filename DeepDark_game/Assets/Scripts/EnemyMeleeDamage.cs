@@ -9,7 +9,9 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public GameObject healthLoot;
        public int maxHealth = 100;
        public int currentHealth;
-	  
+	  public AudioSource slime_die;
+	  public AudioSource mole_injured;
+	  public AudioSource mole_die;
 	   
 	   
 
@@ -30,7 +32,8 @@ public class EnemyMeleeDamage : MonoBehaviour {
                      Die();
 					 
 					 
-              }
+			
+			}
        }
 
        void Die(){
