@@ -21,6 +21,9 @@ public class EnemyMoveHit : MonoBehaviour {
 
 	public bool isMole = true;
 	public bool isStunned = false;
+	
+	
+	
 
 	void Start () {
 		//anim = GetComponentInChildren<Animator> ();
@@ -41,12 +44,14 @@ public class EnemyMoveHit : MonoBehaviour {
 
 		if ((target != null) && (DistToPlayer <= attackRange) && (!isStunned)){
 			transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
+			
 			anim1.SetBool("walk", true);
 			anim2.SetBool("walk", true);
 			//flip enemy to face player direction. Wrong direction? Swap the * -1.
 			if (target.position.x > gameObject.transform.position.x){
 				gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-			} else {
+				
+		} else {
 				gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
 			}
 		}
@@ -59,6 +64,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D other){
 		if ((other.gameObject.tag == "Player") && (!isStunned)) {
 			isAttacking = true;
+			
 			anim1.SetTrigger("attack");
 			anim2.SetTrigger("attack");
 			gameHandler.playerGetHit(damage);

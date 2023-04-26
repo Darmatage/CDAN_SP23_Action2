@@ -11,6 +11,13 @@ public class PlayerMoveAround : MonoBehaviour {
       public static float runSpeed = 10f;
       public float startSpeed = 10f;
       public bool isAlive = true;
+	      private AudioSource StepToPlay;
+       public AudioSource step1;
+       public AudioSource step2;
+       public AudioSource step3;
+       public AudioSource step4;
+       public AudioSource step5;
+       public AudioSource step6;
 
       void Start(){
            //anim = gameObject.GetComponentInChildren<Animator>();
@@ -39,7 +46,36 @@ public class PlayerMoveAround : MonoBehaviour {
                         playerTurn();
                   }
             }
+			if ((Input.GetAxisRaw("Horizontal")!= 0) || (Input.GetAxisRaw("Vertical")!= 0)){
+                     PlaySteps();
+              } else {
+                     StopSteps();
+              }
       }
+   public void PlaySteps(){
+             if ((StepToPlay !=null)&&(StepToPlay.isPlaying)){
+                  return;
+             } else {
+                   int StepNum = Random.Range(1, 6);
+
+                   if (StepNum == 1){ StepToPlay = step1;}
+                   else if (StepNum == 2){ StepToPlay = step2;}
+                   else if (StepNum == 3){ StepToPlay = step3;}
+                   else if (StepNum == 4){ StepToPlay = step4;}
+                   else if (StepNum == 5){ StepToPlay = step5;}
+                   else if (StepNum == 6){ StepToPlay = step6;}
+
+                   StepToPlay.Play();
+             }
+       }
+
+       public void StopSteps(){
+             if ((StepToPlay != null) && (StepToPlay.isPlaying)){
+                   StepToPlay.Stop();
+             }
+       }
+
+
 
       private void playerTurn(){
             // NOTE: Switch player facing label

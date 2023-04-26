@@ -9,6 +9,9 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public GameObject healthLoot;
        public int maxHealth = 100;
        public int currentHealth;
+	  
+	   
+	   
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();
@@ -18,12 +21,15 @@ public class EnemyMeleeDamage : MonoBehaviour {
 
        public void TakeDamage(int damage){
               currentHealth -= damage;
+			
               //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 1f);
               //StartCoroutine(ResetColor());
               anim1.SetTrigger ("getHurt");
 			  anim2.SetTrigger ("getHurt");
               if (currentHealth <= 0){
                      Die();
+					 
+					 
               }
        }
 

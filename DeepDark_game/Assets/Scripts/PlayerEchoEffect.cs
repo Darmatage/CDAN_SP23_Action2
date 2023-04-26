@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 
+
 public class PlayerEchoEffect : MonoBehaviour{
 	
 	public GameObject circleWaveVFX;
 	public float echoRadius = 20f;  // target scale
+	public AudioSource echolocation_final;
 
 	//public float targetScale;
 	public float timeToLerp = 0.5f;
@@ -23,7 +25,10 @@ public class PlayerEchoEffect : MonoBehaviour{
 			GameObject newWave = Instantiate (circleWaveVFX, transform.position, Quaternion.identity);
 			StartCoroutine(EchoWave(newWave));
 			GameHandler_Lights.canEcho = false;
+			echolocation_final.Play();
 		}
+		
+		
     }
 	
 	
