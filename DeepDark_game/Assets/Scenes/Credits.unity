@@ -512,8 +512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.3345, y: 5.0514}
-  m_SizeDelta: {x: 767.2849, y: 390.4139}
+  m_AnchoredPosition: {x: 29.42, y: 5.9061}
+  m_SizeDelta: {x: 858.84, y: 388.7045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235517809
 MonoBehaviour:
@@ -559,7 +559,7 @@ MonoBehaviour:
     Min
     Norton - Level Music
 
-    Jade''s sister - Main Menu Music
+    Amber Pelletier - Main Menu Music
 
 '
 --- !u!222 &1235517810
