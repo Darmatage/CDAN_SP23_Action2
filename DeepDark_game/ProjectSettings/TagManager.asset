@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Water
   - HelmetLight
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: foreground
+    uniqueID: 3769380809
     locked: 0
