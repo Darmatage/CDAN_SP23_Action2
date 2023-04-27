@@ -326,7 +326,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489523237698339010}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a64de651b230a9a4388b5ce83964fa15, type: 2}
   m_audioClip: {fileID: 8300000, guid: a621d92657bed234bb671596be928032, type: 3}
@@ -1077,7 +1077,6 @@ MonoBehaviour:
     m_Bits: 64
   knockBackForce: 5
   player_attack: {fileID: 8611520791025572778}
-  punch: {fileID: 0}
 --- !u!114 &6327919517031785569
 MonoBehaviour:
   m_ObjectHideFlags: 0
