@@ -9,11 +9,9 @@ public class Enemy_Visibility : MonoBehaviour{
 	private float distanceToPlayer;
 	private Transform player;
 
-
     void Start(){
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-
 
     void Update(){
         distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -25,10 +23,6 @@ public class Enemy_Visibility : MonoBehaviour{
 			enemySprite.color = new Color(2.55f, 2.55f, 2.55f, 0.2f);
 		}
 		
-		
-		
     }
-	
-	
 	
 }

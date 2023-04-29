@@ -21,13 +21,17 @@ public class EnemyMoveHit : MonoBehaviour {
 
 	public bool isMole = true;
 	public bool isStunned = false;
+	public bool isSeeMonster = false;
+
+	//seeMonster torchlight variables
+	public float SM_torchThreshold = 3.5f;
+	private float distanceToPlayer;
+
+	//audio variables
 	public AudioSource slime_walk;
 	public AudioSource slime_attack;
 	public AudioSource mole_attack;
 
-
-	
-	
 
 	void Start () {
 		//anim = GetComponentInChildren<Animator> ();
@@ -46,7 +50,14 @@ public class EnemyMoveHit : MonoBehaviour {
 	void Update () {
 		float DistToPlayer = Vector3.Distance(transform.position, target.position);
 
-		if ((target != null) && (DistToPlayer <= attackRange) && (!isStunned)){
+		if (
+		//mole or slime:
+		((target != null) && (DistToPlayer <= attackRange) && (!isStunned) && (!isSeeMonster))
+		||
+		//SeeMonster:
+		((target != null) && (isSeeMonster)
+		&& (((DistToPlayer <= SM_torchThreshold)&&(GameHandler_Lights.torchOn == true)) || (isStunned)))
+		){
 			transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
 			
 			anim1.SetBool("walk", true);
@@ -66,7 +77,11 @@ public class EnemyMoveHit : MonoBehaviour {
 	}
 
 	public void OnCollisionEnter2D(Collision2D other){
-		if ((other.gameObject.tag == "Player") && (!isStunned)) {
+		if (
+		((other.gameObject.tag == "Player") && (!isStunned) && (!isSeeMonster)) 
+		||
+		((other.gameObject.tag == "Player") && (isSeeMonster)) 
+		){
 			isAttacking = true;
 			 
 			anim1.SetTrigger("attack");
@@ -84,12 +99,12 @@ public class EnemyMoveHit : MonoBehaviour {
 	} 
 	   
 	   
-       public void OnCollisionExit2D(Collision2D other){
-              if (other.gameObject.tag == "Player") {
-                     isAttacking = false;
-                     //anim.SetBool("Attack", false);
-              }
-       }
+	public void OnCollisionExit2D(Collision2D other){
+		if (other.gameObject.tag == "Player") {
+			isAttacking = false;
+			//anim.SetBool("Attack", false);
+		}
+	}
 	   
 	public void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag=="HelmetLight"){
@@ -103,16 +118,19 @@ public class EnemyMoveHit : MonoBehaviour {
 		}
 	}   
 	   
-	    IEnumerator EndKnockBack(Rigidbody2D otherRB){
-              yield return new WaitForSeconds(0.2f);
-              otherRB.velocity= new Vector3(0,0,0);
-       }
+	IEnumerator EndKnockBack(Rigidbody2D otherRB){
+		yield return new WaitForSeconds(0.2f);
+		otherRB.velocity= new Vector3(0,0,0);
+	}
 	   
 	public void StunMole(){
 		if (isMole == true){
 			isStunned = true;
 			anim1.SetBool("stun", true);
 			anim2.SetBool("stun", true);
+		}
+		else if (isSeeMonster == true){
+			isStunned = true;
 		}
 	}
 	
@@ -121,6 +139,9 @@ public class EnemyMoveHit : MonoBehaviour {
 			isStunned = false;
 			anim1.SetBool("stun", false);
 			anim2.SetBool("stun", false);
+		}
+		else if (isSeeMonster == true){
+			isStunned = false;
 		}
 	}
 	   
