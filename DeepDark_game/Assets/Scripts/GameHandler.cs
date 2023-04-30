@@ -61,6 +61,12 @@ public class GameHandler : MonoBehaviour {
 				Pause();
 			}
 		}
+		
+		//Cheat Codes for level switching:
+		if (Input.GetKeyDown("1")){SceneManager.LoadScene("Level1");}
+		if (Input.GetKeyDown("2")){SceneManager.LoadScene("Level2");}
+		if (Input.GetKeyDown("3")){SceneManager.LoadScene("Level3");}
+		if (Input.GetKeyDown("4")){SceneManager.LoadScene("Level4");}
 	}
 
 
@@ -152,5 +158,6 @@ public class GameHandler : MonoBehaviour {
 	public void Credits() {
 		SceneManager.LoadScene("Credits");
 	}
+	
 	
 }

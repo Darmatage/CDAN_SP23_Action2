@@ -5,75 +5,80 @@ using UnityEngine.Tilemaps;
 
 public class PlayerEchoReveal : MonoBehaviour{
 
-       public Tilemap destructableTilemap;
-       private List<Vector3> tileWorldLocations;
-       public float rangeDestroy = 2f;
-       //public bool canExplode = true;
-       //public GameObject boomFX;
-	   public Color colorGone;
-	   public Color colorBack;
+	public Tilemap destructableTilemap;
+	private List<Vector3> tileWorldLocations;
+	public float rangeDestroy = 2f;
+	//public bool canExplode = true;
+	//public GameObject boomFX;
+	public Color colorGone;
+	public Color colorBack;
 
 	public GameObject Tilemap_Lines;
 
 
-       void Start(){
-		   Tilemap_Lines.SetActive(false);
-              TileMapInit();
-       }
+	void Start(){
+		Tilemap_Lines.SetActive(false);
+		TileMapInit();
+	}
 
-       void Update(){
-              if ((Input.GetKeyDown("space"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.canEcho)){
-				  Tilemap_Lines.SetActive(true);
-                  destroyTileArea();
-              }
-       }
+	void Update(){
+		if ((Input.GetKeyDown("space"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.canEcho)){
+			Debug.Log("#1: I am echo-ing!");
+			Tilemap_Lines.SetActive(true);
+			destroyTileArea();
+		}
+	}
 
-       void TileMapInit(){
-              tileWorldLocations = new List<Vector3>();
+	void TileMapInit(){
+		tileWorldLocations = new List<Vector3>();
 
-              foreach (var pos in destructableTilemap.cellBounds.allPositionsWithin){
-                     Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
-                     Vector3 place = destructableTilemap.CellToWorld(localPlace) + new Vector3(0.5f, 0.5f, 0f);
+		foreach (var pos in destructableTilemap.cellBounds.allPositionsWithin){
+			Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
+			Vector3 place = destructableTilemap.CellToWorld(localPlace) + new Vector3(0.5f, 0.5f, 0f);
 
-                     if (destructableTilemap.HasTile(localPlace)){
-                            tileWorldLocations.Add(place);
-                     }
-              }
-       }
+			if (destructableTilemap.HasTile(localPlace)){
+				tileWorldLocations.Add(place);
+			}
+		}
+		Debug.Log("#0: init: I know where all the tiles are!");
+	}
 	   
-	   public void TurnOffEchoLines(){
-		   Tilemap_Lines.SetActive(false);
-	   }
+	public void TurnOffEchoLines(){
+		Tilemap_Lines.SetActive(false);
+	}
 
-       void destroyTileArea(){
-             foreach (Vector3 tile in tileWorldLocations){
-                     if (Vector2.Distance(tile, transform.position) <= rangeDestroy){
-                            //Debug.Log("in range");
-                            Vector3Int localPlace = destructableTilemap.WorldToCell(tile);
-                            if (destructableTilemap.HasTile(localPlace)){
-                                   //StartCoroutine(BoomVFX(tile));
+	void destroyTileArea(){
+		foreach (Vector3 tile in tileWorldLocations){
+			if (Vector2.Distance(tile, transform.position) <= rangeDestroy){
+				//Debug.Log("in range");
+				Vector3Int localPlace = destructableTilemap.WorldToCell(tile);
+				if (destructableTilemap.HasTile(localPlace)){
+					//StartCoroutine(BoomVFX(tile));
 								   
-								   //The default script, to set a tile at a position to null:
-                                   //destructableTilemap.SetTile(destructableTilemap.WorldToCell(tile), null);
+					//The default script, to set a tile at a position to null:
+					//destructableTilemap.SetTile(destructableTilemap.WorldToCell(tile), null);
 								   
-									// Flag the tile, so it can change colour (By default it's set to "Lock Colour").
-									// Tilemap.SetTileFlags(position, TileFlags.None);
-									destructableTilemap.SetTileFlags(destructableTilemap.WorldToCell(tile), TileFlags.None);
+					// Flag the tile, so it can change colour (By default it's set to "Lock Colour").
+					// Tilemap.SetTileFlags(position, TileFlags.None);
+					destructableTilemap.SetTileFlags(destructableTilemap.WorldToCell(tile), TileFlags.None);
 								   
-								   //change the color: Tilemap.SetColor(position, color);
-								   destructableTilemap.SetColor(destructableTilemap.WorldToCell(tile), colorGone);
-								   //NOTE: this successfully changes white to black but not the reverse...?
-								   //BUT, can change transparency, so if we have TWO tilemaps, black on top and color below, we can make the top one temporarily invisiblw.
-								   StartCoroutine(BringBackBlack(destructableTilemap.WorldToCell(tile)));
-                            }
+					//change the color: Tilemap.SetColor(position, color);
+					destructableTilemap.SetColor(destructableTilemap.WorldToCell(tile), colorGone);
+					Debug.Log("#2: I am setting tiles to invisible!");
+					
+					//NOTE: this successfully changes white to black but not the reverse...?
+					//BUT, can change transparency, so if we have TWO tilemaps, black on top and color below, we can make the top one temporarily invisiblw.
+					StartCoroutine(BringBackBlack(destructableTilemap.WorldToCell(tile)));
+				}
                      //tileWorldLocations.Remove(tile);
-                     }
-              }
-       }
+			}
+		}
+	}
 
 	IEnumerator BringBackBlack(Vector3Int position){
 		yield return new WaitForSeconds(1f);
 		destructableTilemap.SetColor(position, colorBack);
+		Debug.Log("#3: I brought the tiles back!");
 		
 		/*
 		float t = 0;
