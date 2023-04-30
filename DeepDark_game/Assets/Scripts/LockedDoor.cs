@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LockedDoor : MonoBehaviour{
 
-      public GameHandler gameHandler;
+      private GameHandler gameHandler;
       public GameObject doorLocked;
       public GameObject doorOpened;
 	  public GameObject msg_needKey;
@@ -22,7 +22,8 @@ public class LockedDoor : MonoBehaviour{
                   if (GameInventory.item6num > 0) {
                         doorLocked.SetActive(false);
                         doorOpened.SetActive(true);
-						isLocked = false; 
+						isLocked = false;
+						//GetComponent<AudioSource>().Play();						
                         gameHandler.GetComponent<GameInventory>().InventoryRemove("item6", 1);
                   }
                   else {
