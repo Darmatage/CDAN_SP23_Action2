@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHurt: MonoBehaviour{
 
       //public Animator animator;
-      public Rigidbody2D rb2D;
+      private Rigidbody2D rb2D;
 	  public AudioSource player_injured;
 	  public AudioSource player_die;
 

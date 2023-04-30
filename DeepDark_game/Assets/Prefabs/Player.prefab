@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2234b1aab15fb39499aaec031fc1a30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandler: {fileID: 8001966805577599938, guid: 839de8e9e20fe3f40901bbd93a340f1f, type: 3}
+  gameHandler: {fileID: 0}
   pSpawn: {fileID: 9006918025757463963, guid: 4f2a67e2b005db045a19185de3d5a7ad, type: 3}
 --- !u!114 &1853217457783443775
 MonoBehaviour:

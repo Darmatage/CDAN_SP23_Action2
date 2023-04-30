@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour {
 
-       public GameHandler gameHandler;
+       private GameHandler gameHandler;
        public Transform pSpawn;       // current player spawn point
 
        void Start() {
