@@ -12,6 +12,8 @@ public class PickUp : MonoBehaviour{
       public bool isBattery = false;
       public bool isHealth = false;
 	  public bool isSpore = false;
+	  public bool isKey = false;
+
 	  
 	  public int healthBoost = 10;
 	  public AudioSource pickup;
@@ -61,6 +63,10 @@ public class PickUp : MonoBehaviour{
 				gameHandler.GetComponent<GameInventory>().InventoryAdd("item5");
 				pickup.Play();
 			}
+			 if (isKey == true) {
+                        //Add the key to the inventory. Touch a door to remove a key and open the door.
+                        gameHandler.GetComponent<GameInventory>().InventoryAdd("item6");
+                  }
 			
 			else {Debug.Log("This pickup gave you nothing!");}
 
