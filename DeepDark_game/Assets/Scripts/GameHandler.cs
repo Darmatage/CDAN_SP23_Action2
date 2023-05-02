@@ -27,7 +27,7 @@ public class GameHandler : MonoBehaviour {
 	public static bool GameisPaused = false;
 	public GameObject pauseMenuUI;
 	public AudioMixer mixer;
-	public static float volumeLevel = 1.0f;
+	public static float volumeLevel = 0.3f;
 	private Slider sliderVolumeCtrl;
 
 
@@ -67,6 +67,8 @@ public class GameHandler : MonoBehaviour {
 		if (Input.GetKeyDown("2")){SceneManager.LoadScene("Level2");}
 		if (Input.GetKeyDown("3")){SceneManager.LoadScene("Level3");}
 		if (Input.GetKeyDown("4")){SceneManager.LoadScene("Level4");}
+		if (Input.GetKeyDown("5")){SceneManager.LoadScene("Level5_JasonTest");}
+		
 	}
 
 

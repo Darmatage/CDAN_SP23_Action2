@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructableTilemap: {fileID: 0}
-  rangeDestroy: 2
+  rangeDestroy: 4
   colorGone: {r: 0, g: 0, b: 0, a: 0}
   colorBack: {r: 0, g: 0, b: 0, a: 1}
   Tilemap_Lines: {fileID: 0}

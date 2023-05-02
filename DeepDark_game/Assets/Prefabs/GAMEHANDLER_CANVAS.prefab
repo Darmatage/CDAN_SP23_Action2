@@ -169,7 +169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.999992, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1005220096926434353
@@ -213,7 +213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HEALTH: ???'
+  m_Text: 'Coins: ???'
 --- !u!1 &960427421265104544
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 240, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7583306374390496113
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 8793398798118587857}
   - component: {fileID: 5434798261513512940}
   m_Layer: 5
-  m_Name: ImageBG
+  m_Name: BG_health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504, y: 315}
+  m_AnchoredPosition: {x: -500, y: 315}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8793398798118587857
@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 3866453233072625935}
   - component: {fileID: 5360639509748882703}
   m_Layer: 5
-  m_Name: ImageBG
+  m_Name: BG_tokens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 315}
+  m_AnchoredPosition: {x: -500, y: 246}
   m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3866453233072625935
@@ -2174,34 +2174,6 @@ PrefabInstance:
     - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.047223072
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5407736
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.14851835
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
