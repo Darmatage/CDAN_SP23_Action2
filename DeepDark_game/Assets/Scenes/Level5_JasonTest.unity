@@ -333,6 +333,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9060759589377607020, guid: 7726ba197ad4e5948bfe24e8362cb9e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060759589646905716, guid: 7726ba197ad4e5948bfe24e8362cb9e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9060759590257704172, guid: 7726ba197ad4e5948bfe24e8362cb9e4, type: 3}
       propertyPath: m_Name
       value: GridSample
