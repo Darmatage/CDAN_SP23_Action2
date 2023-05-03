@@ -68,7 +68,7 @@ public class GameHandler : MonoBehaviour {
 		if (Input.GetKeyDown("3")){SceneManager.LoadScene("Level3");}
 		if (Input.GetKeyDown("4")){SceneManager.LoadScene("Level4");}
 		if (Input.GetKeyDown("5")){SceneManager.LoadScene("Level5_JasonTest");}
-		if (Input.GetKeyDown("5")){SceneManager.LoadScene("Level6_copy2Test");}
+		if (Input.GetKeyDown("6")){SceneManager.LoadScene("Level6_copy2Test");}
 		
 	}
 
