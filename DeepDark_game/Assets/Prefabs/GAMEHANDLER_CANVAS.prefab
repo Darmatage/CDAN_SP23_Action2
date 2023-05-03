@@ -484,7 +484,7 @@ RectTransform:
   m_Children:
   - {fileID: 801889994476819662}
   m_Father: {fileID: 4397255044609313822}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -560,6 +560,7 @@ Transform:
   - {fileID: 4397255044609313822}
   - {fileID: 4397255044039531589}
   - {fileID: 517231289004247890}
+  - {fileID: 3870630590082156533}
   - {fileID: 5582659096726333450}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1194,8 +1195,8 @@ RectTransform:
   - {fileID: 1325622985709848612}
   - {fileID: 814653306337533068}
   - {fileID: 4432368640875331935}
-  - {fileID: 48556252765267070}
   - {fileID: 6226850246640390206}
+  - {fileID: 48556252765267070}
   m_Father: {fileID: 8314241898452720344}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1552,6 +1553,55 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7964048071198573996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3870630590082156533}
+  - component: {fileID: 6582465725947487854}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: DialogueManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3870630590082156533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964048071198573996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8314241898452720344}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6582465725947487854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964048071198573996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f91321c311c8b64b853433273ab69d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 1929978554481778243}
+  dialogueText: {fileID: 7688259326416731422}
+  dialogue: []
+  counter: 0
+  dialogueLength: 0
 --- !u!1 &8052229676272336809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,7 +2193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783530198417644932, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 783530198417644932, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2408,7 +2458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8802998422878535775, guid: 2de220c5aabd3a043bceca72062b99cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
