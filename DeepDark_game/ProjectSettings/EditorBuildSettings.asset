@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: 173d1d4db2738644fb10e7e37590d154
   - enabled: 1
     path: Assets/Scenes/Level4.unity
-    guid: bf2a82d223dc1e34ba58f4f323e27bfd
+    guid: 77d7bffb5c6a14c4aa944d6377b51f22
   - enabled: 1
     path: Assets/Scenes/EndLose.unity
     guid: b33da626bea7ac942bb134949b1962a4
