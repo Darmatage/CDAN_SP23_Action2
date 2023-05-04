@@ -213,7 +213,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.29993, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -405,8 +405,8 @@ RectTransform:
   m_Father: {fileID: 783530197636923885}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.29993, y: 0}
+  m_AnchorMax: {x: 0.29993, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -733,6 +733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 783530198417644932}
     m_Modifications:
+    - target: {fileID: 7645853329686819110, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7645853329686819111, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_Text
       value: 'QUIT
@@ -800,6 +804,10 @@ PrefabInstance:
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -861,6 +869,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 783530198417644932}
     m_Modifications:
+    - target: {fileID: 7645853329686819110, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645853329686819110, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7645853329686819111, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_Text
       value: 'RESTART
@@ -922,6 +938,14 @@ PrefabInstance:
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_SizeDelta.y
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_LocalPosition.x
