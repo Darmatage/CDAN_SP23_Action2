@@ -10,7 +10,7 @@ public class OpeningComicNavigation : MonoBehaviour{
 	public string nextScene = "level1";
 	public GameObject[] panels;
 	private int panelsLength;
-	private int currentPanel = 0;
+	public int currentPanel = 0;
 	private Vector3 newPos;
 	private float camSpeed = 4f;
 	public GameObject buttonBack;
@@ -27,15 +27,29 @@ public class OpeningComicNavigation : MonoBehaviour{
 	void FixedUpdate () {
             Vector2 pos = Vector2.Lerp ((Vector2)transform.position, (Vector2)newPos, camSpeed * Time.fixedDeltaTime);
             transform.position = new Vector3 (pos.x, pos.y, transform.position.z);
+			
+			/*
+			Vector3 newPosTest = new Vector3(newPos.x, newPos.y, transform.position.z);
+			Debug.Log("cam pos = " + transform.position + " and destination = " + newPosTest);
+			Debug.Log("Current panel = " + currentPanel);
+			if ((transform.position.x == newPosTest.x)&&(canShake==true)){
+				Debug.Log("pos and canShake good. panel = " + currentPanel);
+				if (currentPanel == (panelToShake-1)){
+					Debug.Log("panel good");
+					GetComponent<CameraShake>().ShakeCamera(2f, 0.3f);
+				}
+			}
+			*/
+			
 	}
-
 
     // Update is called once per frame
     public void PanelNext(){
 		if (currentPanel < (panelsLength - 1)){
-		currentPanel ++;
-		buttonBack.SetActive(true);
-		newPos = panels[currentPanel].transform.position;
+			currentPanel ++;
+			buttonBack.SetActive(true);
+			newPos = panels[currentPanel].transform.position;
+			//screen shake
 			if ((canShake==true)&&(currentPanel == (panelToShake-1))){
 				GetComponent<CameraShake>().ShakeCamera(1f, 0.3f);
 			}
@@ -49,6 +63,7 @@ public class OpeningComicNavigation : MonoBehaviour{
 		if (currentPanel > 0){
 			currentPanel --;
 			newPos = panels[currentPanel].transform.position;
+			//screen shake
 			if ((canShake==true)&&(currentPanel == (panelToShake-1))){
 				GetComponent<CameraShake>().ShakeCamera(1f, 0.3f);
 			}
