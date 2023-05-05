@@ -9,9 +9,8 @@ public class EnemyMeleeDamage : MonoBehaviour {
 	public GameObject healthLoot;
 	public int maxHealth = 100;
 	public int currentHealth;
-	public AudioSource slime_die;
-	public AudioSource mole_injured;
-	public AudioSource mole_die;
+	public AudioSource SFX_die;
+	public AudioSource SFX_injured;
 	 
 	void Start(){
 		rend = GetComponentInChildren<Renderer> ();
@@ -26,6 +25,9 @@ public class EnemyMeleeDamage : MonoBehaviour {
 		//StartCoroutine(ResetColor());
 		anim1.SetTrigger ("getHurt");
 		anim2.SetTrigger ("getHurt");
+		if (!SFX_injured.isPlaying){
+				SFX_injured.Play();
+		}
 		if (currentHealth <= 0){
 			Die();
 					 
@@ -36,6 +38,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 		Instantiate (healthLoot, transform.position, Quaternion.identity);
 		//anim1.SetTrigger ("KO");
 		//anim2.SetTrigger ("KO");
+		SFX_die.Play();
 		GetComponent<Collider2D>().enabled = false;
 		StartCoroutine(Death());
 	}

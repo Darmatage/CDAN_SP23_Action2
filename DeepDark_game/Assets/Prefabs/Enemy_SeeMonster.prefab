@@ -610,9 +610,8 @@ MonoBehaviour:
   isStunned: 0
   isSeeMonster: 1
   SM_torchThreshold: 5
-  slime_walk: {fileID: 6501770424814916835}
-  slime_attack: {fileID: 6501770423752128639}
-  mole_attack: {fileID: 6501770423752128639}
+  SFX_walk: {fileID: 6501770424814916835}
+  SFX_attack: {fileID: 6501770423752128639}
 --- !u!114 &6501770424594001977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,9 +629,8 @@ MonoBehaviour:
   healthLoot: {fileID: 5790692842310987519, guid: 06deabcfa79c2b745a8899630961c116, type: 3}
   maxHealth: 100
   currentHealth: 0
-  slime_die: {fileID: 6501770423365982679}
-  mole_injured: {fileID: 6501770424758370828}
-  mole_die: {fileID: 6501770423365982679}
+  SFX_die: {fileID: 6501770423365982679}
+  SFX_injured: {fileID: 6501770424758370828}
 --- !u!1 &6501770424758370830
 GameObject:
   m_ObjectHideFlags: 0

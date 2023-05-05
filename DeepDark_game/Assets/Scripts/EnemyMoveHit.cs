@@ -28,9 +28,8 @@ public class EnemyMoveHit : MonoBehaviour {
 	private float distanceToPlayer;
 
 	//audio variables
-	public AudioSource slime_walk;
-	public AudioSource slime_attack;
-	public AudioSource mole_attack;
+	public AudioSource SFX_walk;
+	public AudioSource SFX_attack;
 
 
 	void Start () {
@@ -62,6 +61,9 @@ public class EnemyMoveHit : MonoBehaviour {
 			
 			anim1.SetBool("walk", true);
 			anim2.SetBool("walk", true);
+			if (!SFX_walk.isPlaying){
+				SFX_walk.Play();
+			}
 			//flip enemy to face player direction. Wrong direction? Swap the * -1.
 			if (target.position.x > gameObject.transform.position.x){
 				gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
@@ -73,6 +75,9 @@ public class EnemyMoveHit : MonoBehaviour {
 		else { 
 			anim1.SetBool("walk", false);
 			anim2.SetBool("walk", false);
+			if (SFX_walk.isPlaying){
+				SFX_walk.Stop();
+			}
 		}
 	}
 
@@ -86,6 +91,11 @@ public class EnemyMoveHit : MonoBehaviour {
 			 
 			anim1.SetTrigger("attack");
 			anim2.SetTrigger("attack");
+			if (!SFX_attack.isPlaying){
+				SFX_attack.Play();
+			}
+			
+			
 			gameHandler.playerGetHit(damage);
 			//rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
 			//StartCoroutine(HitEnemy());
