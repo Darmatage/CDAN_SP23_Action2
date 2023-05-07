@@ -51,6 +51,9 @@ public class PlayerTorch : MonoBehaviour{
 		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
 		GameHandler_Lights.torchOn = true;
         torchHand.SetActive(true);
+		if (GameHandler_Lights.helmetOn){
+			HelmetTurnOff(); // turn off helmet if torch is on
+		}
 	}
 	
 	public void SnuffTorch(){
@@ -69,6 +72,9 @@ public class PlayerTorch : MonoBehaviour{
 		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
 		GameHandler_Lights.helmetOn = true;
         minerHelmet.SetActive(true);
+		if (GameHandler_Lights.torchOn){
+			SnuffTorch(); // turn off torch if helmet is on
+		}
 	}
 	
 	public void HelmetTurnOff(){

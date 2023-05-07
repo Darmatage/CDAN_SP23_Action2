@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackMelee : MonoBehaviour{
 
-      //public Animator anim;
+      public Animator anim;
       public Transform attackPt;
       public float attackRange = 0.5f;
       public float attackRate = 2f;
@@ -15,10 +15,19 @@ public class PlayerAttackMelee : MonoBehaviour{
 	  // public AudioSource player_attack;
 	// public AudioSource punch;
       void Start(){
-           //anim = gameObject.GetComponentInChildren<Animator>();
+           anim = gameObject.GetComponentInChildren<Animator>();
       }
 
-      void Update(){
+	void Update(){
+		/*
+		if (GameHandler_Lights.torchOn == true){anim.SetBool ("isHoldingTorch", true);} 
+		else {anim.SetBool ("isHoldingTorch", false);}
+		
+		if (GameHandler_Lights.helmetOn == true){anim.SetBool ("isWearingMiner", true);} 
+		else {anim.SetBool ("isWearingMiner", false);}
+		*/
+		  
+		  
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
                  if (Input.GetAxis("Attack") > 0){
@@ -31,7 +40,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       }
 
       void Attack(){
-            //anim.SetTrigger ("Melee");
+            anim.SetTrigger ("attack");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
            
             foreach(Collider2D enemy in hitEnemies){

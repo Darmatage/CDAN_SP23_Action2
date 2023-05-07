@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerMoveAround : MonoBehaviour {
 
-      //public Animator anim;
+      public Animator anim;
       //public AudioSource WalkSFX;
       private Rigidbody2D rb2D;
       private bool FaceRight = false; // determine which way player is facing.
       public static float runSpeed = 10f;
       public float startSpeed = 10f;
       public bool isAlive = true;
-	      private AudioSource StepToPlay;
+		private AudioSource StepToPlay;
        public AudioSource step1;
        public AudioSource step2;
        public AudioSource step3;
@@ -20,11 +20,18 @@ public class PlayerMoveAround : MonoBehaviour {
        public AudioSource step6;
 
       void Start(){
-           //anim = gameObject.GetComponentInChildren<Animator>();
+           anim = gameObject.GetComponentInChildren<Animator>();
            rb2D = transform.GetComponent<Rigidbody2D>();
       }
 
-      void Update(){
+	void Update(){
+		  
+		if (GameHandler_Lights.torchOn == true){anim.SetBool ("isHoldingTorch", true);} 
+		else {anim.SetBool ("isHoldingTorch", false);}
+		
+		if (GameHandler_Lights.helmetOn == true){anim.SetBool ("isWearingMiner", true);} 
+		else {anim.SetBool ("isWearingMiner", false);}
+		  
             //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
             //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
             Vector3 hvMove = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
@@ -32,12 +39,15 @@ public class PlayerMoveAround : MonoBehaviour {
                   transform.position = transform.position + hvMove * runSpeed * Time.deltaTime;
 
                   if ((Input.GetAxis("Horizontal") != 0) || (Input.GetAxis("Vertical") != 0)){
-                  //     anim.SetBool ("Walk", true);
+                       anim.SetBool ("walk", true); 
+					   Debug.Log("I set walk = true");
+					   
                   //     if (!WalkSFX.isPlaying){
                   //           WalkSFX.Play();
                   //     }
                   } else {
-                  //     anim.SetBool ("Walk", false);
+                       anim.SetBool ("walk", false);
+					   Debug.Log("I set walk = false");
                   //     WalkSFX.Stop();
                  }
 
