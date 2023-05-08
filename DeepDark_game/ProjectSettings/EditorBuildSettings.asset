@@ -32,10 +32,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndWin.unity
     guid: a9341b9f4287abc4babf3889c947846c
-  - enabled: 0
-    path: Assets/Scenes/Level5_JasonTest.unity
-    guid: 0744453e1a6573e4aad07073f2afed41
-  - enabled: 0
-    path: Assets/Scenes/Level6_copy2Test.unity
-    guid: bd1bd041a083cfa4e899bd08153a7a8b
   m_configObjects: {}
