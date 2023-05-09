@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - Congratulations, young one!
-  - You hav saved us all with your bravery
+  - You have saved us all with your bravery
   - And your keen eyes
   - Thank you for bringing us light!
   playerInRange: 0

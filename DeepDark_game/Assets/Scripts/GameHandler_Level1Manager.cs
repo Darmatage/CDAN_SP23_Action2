@@ -17,6 +17,7 @@ public class GameHandler_Level1Manager : MonoBehaviour
 	public static bool mushroomHealed = false;
 	public GameObject TM_GroundBlack;
 	public GameObject TM_CollidersBlack;
+	public GameObject TM_Lines;
 	public GameObject DarknessFaded;
 	
 	private Renderer DarknessFadeRend;
@@ -58,6 +59,7 @@ public class GameHandler_Level1Manager : MonoBehaviour
 		if (mushroomHealed){
 			TM_GroundBlack.SetActive(false);
 			TM_CollidersBlack.SetActive(false);
+			TM_Lines.SetActive(false);
 			
 			fadeAlpha -= 0.005f;
 			DarknessFadeRend.material.color = new Color(0f, 0f, 0f, fadeAlpha);

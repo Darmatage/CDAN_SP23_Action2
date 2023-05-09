@@ -57,7 +57,7 @@ public class NPCDialogueManager : MonoBehaviour {
                      counter +=1;
               }
               else { //when lines are complete:
-					if (isTreeEnd = true){
+					if ((isTreeEnd == true)&&(GameHandler_Level1Manager.mushroomHealed)){
 						 SceneManager.LoadScene("EndWin");
 					}
 			  
