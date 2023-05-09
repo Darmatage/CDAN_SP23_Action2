@@ -9,6 +9,8 @@ public class NPCDialogue : MonoBehaviour {
        public string[] dialogue; //enter dialogue lines into the inspector for each NPC
        public bool playerInRange = false; //could be used to display an image: hit [e] to talk
        public int dialogueLength;
+	   
+	   public bool isNPC = true;
 
        void Start(){
               //anim = gameObject.GetComponentInChildren<Animator>();
@@ -19,7 +21,7 @@ public class NPCDialogue : MonoBehaviour {
        }
 
        private void OnTriggerEnter2D(Collider2D other){
-              if (other.gameObject.tag == "Player") {
+              if ((other.gameObject.tag == "Player")&&(isNPC)){
                      playerInRange = true;
                      dialogueMNGR.LoadDialogueArray(dialogue, dialogueLength);
                      dialogueMNGR.OpenDialogue();
@@ -29,11 +31,20 @@ public class NPCDialogue : MonoBehaviour {
        }
 
        private void OnTriggerExit2D(Collider2D other){
-              if (other.gameObject.tag =="Player") {
+              if ((other.gameObject.tag =="Player")&&(isNPC)) {
                      playerInRange = false;
                      dialogueMNGR.CloseDialogue();
                      //anim.SetBool("Chat", false);
                      //Debug.Log("Player left range");
               }
        }
+	   
+	   public void TreeDialogue(){
+			playerInRange = true;
+			dialogueMNGR.LoadDialogueArray(dialogue, dialogueLength);
+			dialogueMNGR.OpenDialogue();
+			dialogueMNGR.isTreeEnd = true;  
+	   }
+	   
+	   
 }

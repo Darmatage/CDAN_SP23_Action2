@@ -11,6 +11,7 @@ TagManager:
   - HelmetLight
   - Checkpoint
   - DialogueManager
+  - GreatMushroom
   layers:
   - Default
   - TransparentFX

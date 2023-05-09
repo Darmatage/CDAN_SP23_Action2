@@ -34,6 +34,7 @@ public class GreatMushroom_Manager : MonoBehaviour{
 			mushroomArt_dying.SetActive(false);
 			mushroomArt_healthy.SetActive(true);
 			isHealed = true;
+			GameHandler_Level1Manager.mushroomHealed = true;
 		}
 	}
 	

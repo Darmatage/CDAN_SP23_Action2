@@ -381,6 +381,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 783530198417644932, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
   m_PrefabInstance: {fileID: 793974392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &793974394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 783530198417644933, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+  m_PrefabInstance: {fileID: 793974392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &915772547
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +772,10 @@ PrefabInstance:
       propertyPath: tokensText
       value: 
       objectReference: {fileID: 1454947433}
+    - target: {fileID: 8001966805577599938, guid: 839de8e9e20fe3f40901bbd93a340f1f, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 793974394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839de8e9e20fe3f40901bbd93a340f1f, type: 3}
 --- !u!114 &1382472447 stripped
@@ -1035,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 240}
+  m_AnchoredPosition: {x: 0, y: 254}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692918551
@@ -1060,11 +1069,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 7
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1

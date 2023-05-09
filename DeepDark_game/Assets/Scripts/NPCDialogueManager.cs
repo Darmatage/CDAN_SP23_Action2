@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPCDialogueManager : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class NPCDialogueManager : MonoBehaviour {
        public string[] dialogue;
        public int counter = 0;
        public int dialogueLength;
+
+	public bool isTreeEnd = false;
 
        void Start(){
               dialogueBox.SetActive(false);
@@ -54,6 +57,10 @@ public class NPCDialogueManager : MonoBehaviour {
                      counter +=1;
               }
               else { //when lines are complete:
+					if (isTreeEnd = true){
+						 SceneManager.LoadScene("EndWin");
+					}
+			  
                      dialogueBox.SetActive(false); //turn off the dialogue display
                      dialogueText.text = "..."; //reset text
                      counter = 0; //reset counter
