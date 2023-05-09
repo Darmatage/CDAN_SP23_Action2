@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 public class GameHandler : MonoBehaviour {
 
 	public static bool isNearHolyMushroom = false;
+	public static bool Level1IsEnd = false;
 
 	private GameObject player;
 	public static int playerHealth = 100;
@@ -43,9 +44,14 @@ public class GameHandler : MonoBehaviour {
 	void Start(){
 		player = GameObject.FindWithTag("Player");
 		sceneName = SceneManager.GetActiveScene().name;
-		if (sceneName=="Main_Menu"){ //uncomment these two lines when the MainMenu exists
+		if (sceneName=="MainMenu"){ //uncomment these two lines when the MainMenu exists
 			playerHealth = StartPlayerHealth;
 		}
+		if (sceneName=="Level4"){ 
+			Level1IsEnd = true;
+		}
+		
+		
 		updateStatsDisplay();
 			
 		pauseMenuUI.SetActive(false);
@@ -67,9 +73,9 @@ public class GameHandler : MonoBehaviour {
 		if (Input.GetKeyDown("2")){SceneManager.LoadScene("Level2");}
 		if (Input.GetKeyDown("3")){SceneManager.LoadScene("Level3");}
 		if (Input.GetKeyDown("4")){SceneManager.LoadScene("Level4");}
-		if (Input.GetKeyDown("5")){SceneManager.LoadScene("Level5_JasonTest");}
-		if (Input.GetKeyDown("6")){SceneManager.LoadScene("Level6_copy2Test");}
-		
+		//if (Input.GetKeyDown("5")){SceneManager.LoadScene("Level5_JasonTest");}
+		//if (Input.GetKeyDown("6")){SceneManager.LoadScene("Level6_copy2Test");}
+		if (Input.GetKeyDown("0")){Level1IsEnd = true;}
 	}
 
 
@@ -146,6 +152,8 @@ public class GameHandler : MonoBehaviour {
 
 	public void RestartGame() {
 		Time.timeScale = 1f;
+		Level1IsEnd = false;
+		playerHealth = StartPlayerHealth;
 		SceneManager.LoadScene("MainMenu");
 		// Please also reset all static variables here, for new games!
 		playerHealth = StartPlayerHealth;

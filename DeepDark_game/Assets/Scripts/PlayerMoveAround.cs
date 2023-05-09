@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveAround : MonoBehaviour {
 
-      public Animator anim;
+      private Animator anim;
       //public AudioSource WalkSFX;
       private Rigidbody2D rb2D;
       private bool FaceRight = false; // determine which way player is facing.
