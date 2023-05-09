@@ -153,6 +153,7 @@ public class GameHandler : MonoBehaviour {
 	public void RestartGame() {
 		Time.timeScale = 1f;
 		Level1IsEnd = false;
+		GameHandler_Level1Manager.mushroomHealed = false;
 		playerHealth = StartPlayerHealth;
 		SceneManager.LoadScene("MainMenu");
 		// Please also reset all static variables here, for new games!

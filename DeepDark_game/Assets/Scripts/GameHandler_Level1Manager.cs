@@ -20,7 +20,7 @@ public class GameHandler_Level1Manager : MonoBehaviour
 	public GameObject DarknessFaded;
 	
 	private Renderer DarknessFadeRend;
-	private float fadeAlpha = 0f;
+	private float fadeAlpha = 1f;
 	private bool canTreeDialogue=true;
 	
     void Start(){
@@ -59,15 +59,15 @@ public class GameHandler_Level1Manager : MonoBehaviour
 			TM_GroundBlack.SetActive(false);
 			TM_CollidersBlack.SetActive(false);
 			
-			fadeAlpha -= 0.001f;
+			fadeAlpha -= 0.005f;
 			DarknessFadeRend.material.color = new Color(0f, 0f, 0f, fadeAlpha);
 			if (fadeAlpha <= 0f){
 				fadeAlpha=0f;
 				if (canTreeDialogue==true){
-		GameObject.FindWithTag("GreatMushroom").GetComponent<NPCDialogue>().TreeDialogue();
-		canTreeDialogue=false;
+					GameObject.FindWithTag("GreatMushroom").GetComponent<NPCDialogue>().TreeDialogue();
+					canTreeDialogue=false;
 				}
-				}
+			}
 		}
 	}
 
