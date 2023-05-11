@@ -17,9 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 61ecf3ee7da74c441a2eef3bf2c68b2e
+  - enabled: 0
+    path: Assets/Scenes/Level2_Katie.unity
+    guid: 029fc7722ada1d045a20ea714d18bc7c
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: 029fc7722ada1d045a20ea714d18bc7c
+    guid: 156cdd9b8c5e05c419e18ac8a57589a2
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 173d1d4db2738644fb10e7e37590d154
