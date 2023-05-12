@@ -26,6 +26,7 @@ public class PlayerTorch : MonoBehaviour{
 	}
 	
     void Update(){
+		/*
 		if (Input.GetKeyDown("t")){
             if (GameHandler_Lights.torchOn == false){
 				ActivateTorch();
@@ -43,7 +44,7 @@ public class PlayerTorch : MonoBehaviour{
                 HelmetTurnOff();           
             }
         }
-		
+		*/
     }
 	
 	//torch functions

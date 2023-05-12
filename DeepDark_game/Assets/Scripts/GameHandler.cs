@@ -24,6 +24,7 @@ public class GameHandler : MonoBehaviour {
 	//this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
 
 	private string sceneName;
+	 public static string lastLevelDied;  //allows replaying the Level where you died
 	  
 	public static bool GameisPaused = false;
 	public GameObject pauseMenuUI;
@@ -68,6 +69,7 @@ public class GameHandler : MonoBehaviour {
 			}
 		}
 		
+		/*
 		//Cheat Codes for level switching:
 		if (Input.GetKeyDown("1")){SceneManager.LoadScene("Level1");}
 		if (Input.GetKeyDown("2")){SceneManager.LoadScene("Level2");}
@@ -76,6 +78,7 @@ public class GameHandler : MonoBehaviour {
 		//if (Input.GetKeyDown("5")){SceneManager.LoadScene("Level5_JasonTest");}
 		//if (Input.GetKeyDown("6")){SceneManager.LoadScene("Level6_copy2Test");}
 		if (Input.GetKeyDown("0")){Level1IsEnd = true;}
+		*/
 	}
 
 
@@ -136,15 +139,16 @@ public class GameHandler : MonoBehaviour {
 
 	public void playerDies(){
 		player.GetComponent<PlayerHurt>().playerDead();       //play Death animation
-		//StartCoroutine(DeathPause());
+		lastLevelDied = sceneName;       //allows replaying the Level where you died
+		StartCoroutine(DeathPause());
 	}
 
-      //IEnumerator DeathPause(){
-            //player.GetComponent<PlayerMove>().isAlive = false;
+      IEnumerator DeathPause(){
+            player.GetComponent<PlayerMoveAround>().isAlive = false;
             //player.GetComponent<PlayerJump>().isAlive = false;
-            //yield return new WaitForSeconds(1.0f);
-            //SceneManager.LoadScene("EndLose");
-      //}
+            yield return new WaitForSeconds(1.0f);
+            SceneManager.LoadScene("EndLose");
+      }
 
 	public void StartGame() {
 		SceneManager.LoadScene("Level0");
@@ -159,6 +163,14 @@ public class GameHandler : MonoBehaviour {
 		// Please also reset all static variables here, for new games!
 		playerHealth = StartPlayerHealth;
 	}
+
+     // Replay the Level where you died
+      public void ReplayLastLevel() {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("lastLevelDied");
+             // Reset all static variables here, for new games:
+            playerHealth = StartPlayerHealth;
+      }
 
 	public void QuitGame() {
 		#if UNITY_EDITOR

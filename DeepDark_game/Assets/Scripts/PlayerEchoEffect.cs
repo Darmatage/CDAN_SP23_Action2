@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-
-
 
 public class PlayerEchoEffect : MonoBehaviour{
-	
+	//one of two scripts that produce the echo effect, along with Player_EchoReveal
+	private Animator anim;
 	public GameObject circleWaveVFX;
 	public float echoRadius = 20f;  // target scale
 	public AudioSource echolocation_final;
@@ -15,15 +13,18 @@ public class PlayerEchoEffect : MonoBehaviour{
 	public float timeToLerp = 0.5f;
 	public float scaleModifier;
 	float scaleModifierStart = 1;
-	
-	//public Tilemap tilemap;
+
+	void Start(){
+		anim = GetComponentInChildren<Animator>();
+		
+	}
 
     void Update(){
 		//listener, activate waveVFX
-		
-        if ((Input.GetKeyDown("space"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.canEcho)){
+        if ((Input.GetKeyDown("e"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.helmetOn == false)&&(GameHandler_Lights.canEcho)){
 			GameObject newWave = Instantiate (circleWaveVFX, transform.position, Quaternion.identity);
 			StartCoroutine(EchoWave(newWave));
+			anim.SetTrigger("echo");
 			GameHandler_Lights.canEcho = false;
 			echolocation_final.Play();
 		}
@@ -46,9 +47,6 @@ public class PlayerEchoEffect : MonoBehaviour{
 			yield return null;
 		}
 		
-		//activate raycasts
-		//EchoRaycasts(theWave.transform.position);
-		
 		//reverse
 		time = 0;
 		scaleModifier = scaleModifierStart;
@@ -63,30 +61,5 @@ public class PlayerEchoEffect : MonoBehaviour{
 	
 		Destroy(theWave);
 	}
-	
-	//enable Raycast
-	/*
-	void EchoRaycasts(Vector2 wavPos){
-		Physics2D.queriesStartInColliders = false;
-		for (int castAngle = 0 ; castAngle < 360 ; castAngle += 15){
-			Vector3 addAngle = new Vector3(0, 0, castAngle);
-			RaycastHit2D hitInfo = Physics2D.Raycast(wavPos, transform.up + addAngle, echoRadius);
-			Debug.DrawLine(wavPos, hitInfo.point);
-			Debug.Log("current raycast angle = " + (transform.up + addAngle));
-            if (hitInfo.collider != null){
-                if (hitInfo.collider.CompareTag("wall")){
-                    Vector2 hitPoint = hitInfo.point;
-					//Instantiate (circleWaveVFX, hitPoint, Quaternion.identity);
-				//	hitInfo.collider.gameObject.GetComponent<SpriteRenderer>().color = Color.white;  
-					//Vector3Int hitPointInt = new Vector3Int((int)hitPoint.x,(int)hitPoint.y,0);
-                    Debug.Log(" I hit a wall = " + hitPoint);
-					//tilemap.SetTileFlags(hitPointInt, TileFlags.None);
-					//tilemap.SetColor(hitPointInt, Color.white);
-                }
-            }
-            else { Debug.Log("I can't find a wall"); }
-		}
-	}
-	*/
 	
 }

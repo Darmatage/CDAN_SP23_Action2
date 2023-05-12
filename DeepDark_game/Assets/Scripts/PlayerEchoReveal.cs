@@ -22,8 +22,8 @@ public class PlayerEchoReveal : MonoBehaviour{
 	}
 
 	void Update(){
-		if ((Input.GetKeyDown("space"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.canEcho)){
-			Debug.Log("#1: I am echo-ing!");
+		if ((Input.GetKeyDown("e"))&&(GameHandler_Lights.torchOn == false)&&(GameHandler_Lights.helmetOn == false)&&(GameHandler_Lights.canEcho)){
+			//Debug.Log("#1: I am echo-ing!");
 			Tilemap_Lines.SetActive(true);
 			destroyTileArea();
 		}
@@ -40,7 +40,7 @@ public class PlayerEchoReveal : MonoBehaviour{
 				tileWorldLocations.Add(place);
 			}
 		}
-		Debug.Log("#0: init: I know where all the tiles are!");
+		//Debug.Log("#0: init: I know where all the tiles are!");
 	}
 	   
 	public void TurnOffEchoLines(){
@@ -64,7 +64,7 @@ public class PlayerEchoReveal : MonoBehaviour{
 								   
 					//change the color: Tilemap.SetColor(position, color);
 					destructableTilemap.SetColor(destructableTilemap.WorldToCell(tile), colorGone);
-					Debug.Log("#2: I am setting tiles to invisible!");
+					//Debug.Log("#2: I am setting tiles to invisible!");
 					
 					//NOTE: this successfully changes white to black but not the reverse...?
 					//BUT, can change transparency, so if we have TWO tilemaps, black on top and color below, we can make the top one temporarily invisiblw.
@@ -78,7 +78,8 @@ public class PlayerEchoReveal : MonoBehaviour{
 	IEnumerator BringBackBlack(Vector3Int position){
 		yield return new WaitForSeconds(1f);
 		destructableTilemap.SetColor(position, colorBack);
-		Debug.Log("#3: I brought the tiles back!");
+		Tilemap_Lines.SetActive(false);
+		//Debug.Log("#3: I brought the tiles back!");
 		
 		/*
 		float t = 0;

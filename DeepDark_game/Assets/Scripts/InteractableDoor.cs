@@ -7,7 +7,7 @@ public class InteractableDoor : MonoBehaviour{
 
         public string NextLevel = "MainMenu";
         public GameObject msgPressE;
-        public bool canPressE =false;
+        private bool canPressE =false;
 
        void Start(){
               msgPressE.SetActive(false);
