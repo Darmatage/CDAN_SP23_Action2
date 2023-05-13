@@ -477,6 +477,17 @@ PrefabInstance:
       objectReference: {fileID: 1751620618}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839de8e9e20fe3f40901bbd93a340f1f, type: 3}
+--- !u!114 &773065137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8001966805577599938, guid: 839de8e9e20fe3f40901bbd93a340f1f, type: 3}
+  m_PrefabInstance: {fileID: 773065136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9ec225da563e049aa92d7449a8a22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797656607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1275,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300623543}
     m_Modifications:
+    - target: {fileID: 783530196685434303, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 773065137}
+    - target: {fileID: 783530196685434303, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
     - target: {fileID: 783530198417644932, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1352,6 +1371,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PAUSE_MENU
       objectReference: {fileID: 0}
+    - target: {fileID: 5624477753450417453, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 773065137}
+    - target: {fileID: 5624477753450417453, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506935512605788655, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 773065137}
+    - target: {fileID: 6506935512605788655, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
 --- !u!1 &1751620618 stripped
@@ -1408,7 +1443,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: a64de651b230a9a4388b5ce83964fa15, type: 2}
   m_audioClip: {fileID: 8300000, guid: ec352191bf652284b9b7f703d7459e3d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

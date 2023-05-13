@@ -136,9 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7645853329686819111, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_Text
-      value: 'RESTART
-
-'
+      value: MAIN MENU
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542722, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -230,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -320
+      value: -380
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -589,7 +587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 95}
+  m_AnchoredPosition: {x: 0, y: 160}
   m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235517809
@@ -615,7 +613,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
@@ -920,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 320
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1060,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 240}
+  m_AnchoredPosition: {x: 0, y: 255}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692918551

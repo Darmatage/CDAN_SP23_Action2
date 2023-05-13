@@ -1113,7 +1113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcb580f24ebc3a45a592bb414baba77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   startSpeed: 10
   isAlive: 1
   step1: {fileID: 4983154314790123108}
