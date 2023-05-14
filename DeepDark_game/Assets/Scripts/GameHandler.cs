@@ -147,7 +147,7 @@ public class GameHandler : MonoBehaviour {
             player.GetComponent<PlayerMoveAround>().isAlive = false;
             //player.GetComponent<PlayerJump>().isAlive = false;
             yield return new WaitForSeconds(1.0f);
-            SceneManager.LoadScene("EndLose");
+            //SceneManager.LoadScene("EndLose");
       }
 
 	public void StartGame() {

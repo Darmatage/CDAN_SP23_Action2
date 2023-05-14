@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour {
 
-       private GameHandler gameHandler;
+       public GameHandler gameHandler;
        public Transform pSpawn;       // current player spawn point
 
        void Start() {
@@ -23,7 +23,7 @@ public class PlayerRespawn : MonoBehaviour {
        }
 
        public void OnTriggerEnter2D(Collider2D other) {
-              if (other.gameObject.tag == "CheckPoint"){
+              if (other.gameObject.tag == "Checkpoint"){
                             pSpawn = other.gameObject.transform;
                             GameObject thisCheckpoint = other.gameObject;
                             StopCoroutine(changeColor(thisCheckpoint));

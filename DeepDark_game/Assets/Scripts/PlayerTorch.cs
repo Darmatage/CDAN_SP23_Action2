@@ -7,6 +7,7 @@ public class PlayerTorch : MonoBehaviour{
 	public GameObject torchHand;
 	public GameObject minerHelmet;
 	public AudioSource torch_turnOn;
+	public AudioSource torch_turnOff;
 	public AudioSource miner_hat_onOff;
 	//private GameHandler gameHandler;
 	
@@ -31,8 +32,10 @@ public class PlayerTorch : MonoBehaviour{
             if (GameHandler_Lights.torchOn == false){
 				ActivateTorch();
 				torch_turnOn.Play();
+				
             }else{
-                SnuffTorch();           
+                SnuffTorch();
+            torch_turnOff.Play();				
             }
         }
 		
@@ -52,14 +55,17 @@ public class PlayerTorch : MonoBehaviour{
 		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
 		GameHandler_Lights.torchOn = true;
         torchHand.SetActive(true);
+		torch_turnOn.Play();
 		if (GameHandler_Lights.helmetOn){
 			HelmetTurnOff(); // turn off helmet if torch is on
+			
 		}
 	}
 	
 	public void SnuffTorch(){
 		GameHandler_Lights.torchOn = false;
         torchHand.SetActive(false); 
+		torch_turnOff.Play();
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
@@ -73,6 +79,7 @@ public class PlayerTorch : MonoBehaviour{
 		GetComponent<PlayerEchoReveal>().TurnOffEchoLines();
 		GameHandler_Lights.helmetOn = true;
         minerHelmet.SetActive(true);
+		miner_hat_onOff.Play();
 		if (GameHandler_Lights.torchOn){
 			SnuffTorch(); // turn off torch if helmet is on
 		}
@@ -81,6 +88,7 @@ public class PlayerTorch : MonoBehaviour{
 	public void HelmetTurnOff(){
 		GameHandler_Lights.helmetOn = false;
         minerHelmet.SetActive(false); 
+		miner_hat_onOff.Play();
 	}
 	
 	
