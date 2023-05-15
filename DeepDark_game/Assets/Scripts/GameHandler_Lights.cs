@@ -43,6 +43,7 @@ public class GameHandler_Lights : MonoBehaviour{
 
 		//Torch Timer
 		if (torchOn == true){
+			Debug.Log("torchOn = " + torchOn);
 			if (timerTorch < timeToNoTorch){
 				timerTorch += 0.01f;
 				timerTorchDisplay.SetActive(true);
@@ -52,7 +53,7 @@ public class GameHandler_Lights : MonoBehaviour{
 				timerTorch = 0;
 				timerTorchDisplay.SetActive(false);
 			}
-		}
+		} else {Debug.Log("torchOn = " + torchOn);}
 
 		//Helmet Timer
 		if (helmetOn == true){

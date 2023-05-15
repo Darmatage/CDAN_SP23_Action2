@@ -11,6 +11,7 @@ public class Drill : MonoBehaviour{
 	private AudioSource DrillSFX;
 	public GameObject damageCollider;
 	private bool playerInDrillRange = false;
+	private bool isTurnedOff = false;
 	private Transform player;
 	private float shakeTimer=0;
 	private float shakeAmt = 0.2f;
@@ -33,7 +34,7 @@ public class Drill : MonoBehaviour{
 	}
 
 	void FixedUpdate(){
-		if (playerInDrillRange){
+		if ((playerInDrillRange)&&(!isTurnedOff)){
 			shakeTimer += 0.01f;
 			if (shakeTimer >= 4f){
 				Quake();
@@ -55,7 +56,7 @@ public class Drill : MonoBehaviour{
                         DrillOff.SetActive(true);
 						damageCollider.SetActive(false);
 						DrillSFX.Stop();
-						playerInDrillRange = false;
+						isTurnedOff = true;
                         gameHandler.GetComponent<GameInventory>().InventoryRemove("item6", 3);
 						
                   }

@@ -26,11 +26,11 @@ public class PlayerMoveAround : MonoBehaviour {
 
 	void Update(){
 		  
-		if (GameHandler_Lights.torchOn == true){anim.SetBool ("isHoldingTorch", true);} 
-		else {anim.SetBool ("isHoldingTorch", false);}
+		//if (GameHandler_Lights.torchOn == true){anim.SetBool ("isHoldingTorch", true);} 
+		//else {anim.SetBool ("isHoldingTorch", false);}
 		
-		if (GameHandler_Lights.helmetOn == true){anim.SetBool ("isWearingMiner", true);} 
-		else {anim.SetBool ("isWearingMiner", false);}
+		//if (GameHandler_Lights.helmetOn == true){anim.SetBool ("isWearingMiner", true);} 
+		//else {anim.SetBool ("isWearingMiner", false);}
 		  
             //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
             //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
