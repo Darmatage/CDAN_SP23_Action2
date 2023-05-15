@@ -598,6 +598,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000699504}
   m_CullTransparentMesh: 1
+--- !u!1 &1190065827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645853331389542732, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+  m_PrefabInstance: {fileID: 1256388581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1235517807
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +815,78 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7645853331389542733, guid: f258047e30d61114889cd4a0f4528976, type: 3}
   m_PrefabInstance: {fileID: 1256388581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1256388583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190065827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9f9f93255163f4baba06d174c3c886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.1363225
+      outSlope: 4.1363225
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.044214115
+    - serializedVersion: 3
+      time: 0.85809237
+      value: 1.4915384
+      inSlope: -0.28477132
+      outSlope: -0.28477132
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -6.562668
+      outSlope: -6.562668
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16566637
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 0
+  isButton2: 1
+  isButton3: 0
 --- !u!1 &1277881495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1515,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Main_Menu_Demo: {fileID: 464737327}
+--- !u!1 &1883421445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645853331389542732, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+  m_PrefabInstance: {fileID: 335967434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1883421446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883421445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9f9f93255163f4baba06d174c3c886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.1363225
+      outSlope: 4.1363225
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.044214115
+    - serializedVersion: 3
+      time: 0.85809237
+      value: 1.4915384
+      inSlope: -0.28477132
+      outSlope: -0.28477132
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -6.562668
+      outSlope: -6.562668
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16566637
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 1
+  isButton2: 0
+  isButton3: 0
 --- !u!1001 &1898891163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1597,6 +1751,83 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 783530198417644932, guid: 0f44ecb12a49a4d41a1591136f13ff25, type: 3}
   m_PrefabInstance: {fileID: 1898891163}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1983863487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645853331389542732, guid: f258047e30d61114889cd4a0f4528976, type: 3}
+  m_PrefabInstance: {fileID: 1389020972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983863488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983863487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9f9f93255163f4baba06d174c3c886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curveScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.1363225
+      outSlope: 4.1363225
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.044214115
+    - serializedVersion: 3
+      time: 0.85809237
+      value: 1.4915384
+      inSlope: -0.28477132
+      outSlope: -0.28477132
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -6.562668
+      outSlope: -6.562668
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16566637
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curveAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isButton1: 0
+  isButton2: 0
+  isButton3: 1
 --- !u!1 &2127315590
 GameObject:
   m_ObjectHideFlags: 0

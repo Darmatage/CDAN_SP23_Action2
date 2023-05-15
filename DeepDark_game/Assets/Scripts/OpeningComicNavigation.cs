@@ -59,6 +59,12 @@ public class OpeningComicNavigation : MonoBehaviour{
 		}
     }
 	
+	
+	 public void PanelSkip(){
+			SceneManager.LoadScene(nextScene);
+		
+    }
+	
 	public void PanelBack(){
 		if (currentPanel > 0){
 			currentPanel --;
