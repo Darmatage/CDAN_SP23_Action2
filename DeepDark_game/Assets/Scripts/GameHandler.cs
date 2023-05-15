@@ -147,7 +147,7 @@ public class GameHandler : MonoBehaviour {
             player.GetComponent<PlayerMoveAround>().isAlive = false;
             //player.GetComponent<PlayerJump>().isAlive = false;
             yield return new WaitForSeconds(1.0f);
-            //SceneManager.LoadScene("EndLose");
+            SceneManager.LoadScene("EndLose");
       }
 
 	public void StartGame() {
@@ -155,22 +155,35 @@ public class GameHandler : MonoBehaviour {
 	}
 
 	public void RestartGame() {
-		Time.timeScale = 1f;
 		Level1IsEnd = false;
 		GameHandler_Level1Manager.mushroomHealed = false;
-		playerHealth = StartPlayerHealth;
+		ResetStaticVariables();
 		SceneManager.LoadScene("MainMenu");
-		// Please also reset all static variables here, for new games!
-		playerHealth = StartPlayerHealth;
 	}
 
      // Replay the Level where you died
-      public void ReplayLastLevel() {
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("lastLevelDied");
-             // Reset all static variables here, for new games:
-            playerHealth = StartPlayerHealth;
-      }
+     public void ReplayLastLevel() {
+		ResetStaticVariables();
+		SceneManager.LoadScene(lastLevelDied);
+	}
+	
+	public void ResetStaticVariables(){
+		// Reset all static variables here, for new games:
+		Time.timeScale = 1f;
+		playerHealth = StartPlayerHealth;
+		GameInventory.item1bool = false;
+		GameInventory.item2bool = false;
+		GameInventory.item3bool = false;
+		GameInventory.item4bool = false;
+		GameInventory.item5bool = false;
+		GameInventory.item6bool = false;
+		GameInventory.item1num = 0;
+		GameInventory.item2num = 0;
+		GameInventory.item3num = 0;
+		GameInventory.item4num = 0;
+		GameInventory.item5num = 0;
+		GameInventory.item6num = 0;
+	}
 
 	public void QuitGame() {
 		#if UNITY_EDITOR

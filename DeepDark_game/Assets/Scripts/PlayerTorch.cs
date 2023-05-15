@@ -68,8 +68,8 @@ public class PlayerTorch : MonoBehaviour{
 		torch_turnOff.Play();
 	}
 	
-	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "Water"){
+	void OnTriggerStay2D(Collider2D other){
+		if ((other.gameObject.tag == "Water")&&(GameHandler_Lights.torchOn)){
 			SnuffTorch();
 		}
 	}
