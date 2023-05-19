@@ -7,7 +7,9 @@ public class PlayerEchoEffect : MonoBehaviour{
 	private Animator anim;
 	public GameObject circleWaveVFX;
 	public float echoRadius = 20f;  // target scale
+	
 	public AudioSource echolocation_final;
+	private float clipVolume; 
 
 	//public float targetScale;
 	public float timeToLerp = 0.5f;
@@ -16,7 +18,8 @@ public class PlayerEchoEffect : MonoBehaviour{
 
 	void Start(){
 		anim = GetComponentInChildren<Animator>();
-		
+		clipVolume = echolocation_final.volume;
+		//echolocation_final.volume = clipVolume * 10;
 	}
 
     void Update(){
@@ -26,7 +29,9 @@ public class PlayerEchoEffect : MonoBehaviour{
 			StartCoroutine(EchoWave(newWave));
 			anim.SetTrigger("echo");
 			GameHandler_Lights.canEcho = false;
-			echolocation_final.Play();
+			//if (echolocation_final.isPlaying == false){
+				echolocation_final.Play();
+			//}
 		}
 		
 		
@@ -35,6 +40,7 @@ public class PlayerEchoEffect : MonoBehaviour{
 	
 	//enable wave scaling, destroy after delay
 	IEnumerator EchoWave(GameObject theWave){
+		//echolocation_final.Play();
 		float time = 0;
 		scaleModifier = scaleModifierStart;
 		float startValue = 0.1f;

@@ -11,13 +11,23 @@ public class PlayerMoveAround : MonoBehaviour {
       public static float runSpeed = 10f;
       public float startSpeed = 10f;
       public bool isAlive = true;
-		private AudioSource StepToPlay;
-       public AudioSource step1;
-       public AudioSource step2;
-       public AudioSource step3;
-       public AudioSource step4;
-       public AudioSource step5;
-       public AudioSource step6;
+
+	private AudioSource StepToPlay;
+	public AudioSource step1;
+	public AudioSource step2;
+	public AudioSource step3;
+	public AudioSource step4;
+	public AudioSource step5;
+	public AudioSource step6;
+
+	public AudioSource step1water;
+	public AudioSource step2water;
+	public AudioSource step3water;
+	public AudioSource step4water;
+	public AudioSource step5water;
+	public AudioSource step6water;
+	
+	private bool isInWater = false;
 
       void Start(){
            anim = gameObject.GetComponentInChildren<Animator>();
@@ -62,32 +72,48 @@ public class PlayerMoveAround : MonoBehaviour {
                      StopSteps();
               }
       }
-   public void PlaySteps(){
-             if ((StepToPlay !=null)&&(StepToPlay.isPlaying)){
-                  return;
-             } else {
-                   int StepNum = Random.Range(1, 6);
+	public void PlaySteps(){
+		if ((StepToPlay !=null)&&(StepToPlay.isPlaying)){
+			return;
+		} else {
+			int StepNum = Random.Range(1, 6);
 
-                   if (StepNum == 1){ StepToPlay = step1;}
-                   else if (StepNum == 2){ StepToPlay = step2;}
-                   else if (StepNum == 3){ StepToPlay = step3;}
-                   else if (StepNum == 4){ StepToPlay = step4;}
-                   else if (StepNum == 5){ StepToPlay = step5;}
-                   else if (StepNum == 6){ StepToPlay = step6;}
+			if (StepNum == 1){ 
+				if (!isInWater){StepToPlay = step1;}
+				else {StepToPlay = step1water;}
+			}
+			else if (StepNum == 2){ 
+				if (!isInWater){StepToPlay = step2;}
+				else {StepToPlay = step2water;}
+			}
+			else if (StepNum == 3){ 
+				if (!isInWater){StepToPlay = step3;}
+				else {StepToPlay = step3water;}
+			}
+			else if (StepNum == 4){ 
+				if (!isInWater){StepToPlay = step4;}
+				else {StepToPlay = step5water;}
+			}
+			else if (StepNum == 5){ 
+				if (!isInWater){StepToPlay = step5;}
+				else {StepToPlay = step5water;}
+			}
+			else if (StepNum == 6){ 
+				if (!isInWater){StepToPlay = step6;}
+				else {StepToPlay = step6water;}
+			}
 
-                   StepToPlay.Play();
-             }
-       }
+			StepToPlay.Play();
+		}
+	}
 
-       public void StopSteps(){
+	public void StopSteps(){
              if ((StepToPlay != null) && (StepToPlay.isPlaying)){
                    StepToPlay.Stop();
              }
-       }
+	}
 
-
-
-      private void playerTurn(){
+	private void playerTurn(){
             // NOTE: Switch player facing label
             FaceRight = !FaceRight;
 
@@ -95,5 +121,18 @@ public class PlayerMoveAround : MonoBehaviour {
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
-      }
+	}
+	
+	public void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "Water"){
+			isInWater = true;
+		}
+	}
+	
+		public void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.tag == "Water"){
+			isInWater = false;
+		}
+	}
+	
 }
