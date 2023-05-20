@@ -22,8 +22,8 @@ public class ButtonsTween_AlphaScale : MonoBehaviour{
 
        float timer = 0;
        float button1Timer = 0.5f;
-       float button2Timer = 1.5f;
-       float button3Timer = 2f;
+       float button2Timer = 0.75f;
+       float button3Timer = 1f;
 
        void Start(){
               startScale = transform.localScale;

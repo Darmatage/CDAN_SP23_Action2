@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5046176839946458358
+--- !u!1 &1452723781798445393
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5046176839946458359}
-  - component: {fileID: 5046176839946458360}
-  - component: {fileID: 5046176839946458361}
+  - component: {fileID: 1452723781798445392}
+  - component: {fileID: 1452723781798445407}
+  - component: {fileID: 1452723781798445406}
   m_Layer: 0
   m_Name: DamageCollider
   m_TagString: Untagged
@@ -18,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5046176839946458359
+--- !u!4 &1452723781798445392
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176839946458358}
+  m_GameObject: {fileID: 1452723781798445393}
   m_LocalRotation: {x: 0, y: 0, z: 0.21669519, w: 0.9762393}
   m_LocalPosition: {x: -0.89, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5046176840387716615}
+  m_Father: {fileID: 1452723781969179552}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.03}
---- !u!61 &5046176839946458360
+--- !u!61 &1452723781798445407
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176839946458358}
+  m_GameObject: {fileID: 1452723781798445393}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -59,20 +59,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &5046176839946458361
+--- !u!114 &1452723781798445406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176839946458358}
+  m_GameObject: {fileID: 1452723781798445393}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb9ba5676dc72a0429a4245733a4c4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
---- !u!1 &5046176840387716610
+--- !u!1 &1452723781969179557
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,11 +80,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5046176840387716615}
-  - component: {fileID: 5046176840387716614}
-  - component: {fileID: 5046176840387716613}
-  - component: {fileID: 5046176840387716611}
-  - component: {fileID: 5046176840387716612}
+  - component: {fileID: 1452723781969179552}
+  - component: {fileID: 1452723781969179553}
+  - component: {fileID: 1452723781969179554}
   m_Layer: 0
   m_Name: Drill
   m_TagString: Untagged
@@ -92,31 +90,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5046176840387716615
+--- !u!4 &1452723781969179552
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840387716610}
+  m_GameObject: {fileID: 1452723781969179557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.87, y: -125.41, z: 0}
   m_LocalScale: {x: -2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5046176841196905938}
-  - {fileID: 5046176840628538577}
-  - {fileID: 5046176839946458359}
+  - {fileID: 1452723782778892405}
+  - {fileID: 1452723782210001270}
+  - {fileID: 1452723781798445392}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5046176840387716614
+--- !u!61 &1452723781969179553
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840387716610}
+  m_GameObject: {fileID: 1452723781969179557}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -136,142 +134,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.8525324, y: 3.9631867}
   m_EdgeRadius: 0
---- !u!114 &5046176840387716613
+--- !u!114 &1452723781969179554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840387716610}
+  m_GameObject: {fileID: 1452723781969179557}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3782b6c801f762e428606cc551a9a7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandler: {fileID: 0}
-  DrillOn: {fileID: 5046176841196905935}
-  DrillOff: {fileID: 5046176840628538574}
-  damageCollider: {fileID: 5046176839946458358}
---- !u!114 &5046176840387716611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840387716610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 584cbad4d844da349bc10237dc1e23e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - What is this???
-  - Is it destroying the Great Mushroom??
-  - I need to turn this off!
-  - It looks like it needs 3 keys to shut down.
-  playerInRange: 0
-  dialogueLength: 0
-  isNPC: 1
-  camShake: 0
-  shakeAmt: 0.15
-  shakeTime: 0.3
---- !u!82 &5046176840387716612
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840387716610}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: a64de651b230a9a4388b5ce83964fa15, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2befb4d9d29f23d43adecb4542404aea, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.5
-  m_Pitch: 0.3
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &5046176840628538574
+  DrillOn: {fileID: 1452723782778892392}
+  DrillOff: {fileID: 1452723782210001257}
+  damageCollider: {fileID: 1452723781798445393}
+--- !u!1 &1452723782210001257
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,8 +157,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5046176840628538577}
-  - component: {fileID: 5046176840628538576}
+  - component: {fileID: 1452723782210001270}
+  - component: {fileID: 1452723782210001271}
+  - component: {fileID: 1762018510537930492}
+  - component: {fileID: 5991605081950229301}
   m_Layer: 0
   m_Name: DrillOff_art
   m_TagString: Untagged
@@ -288,28 +168,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5046176840628538577
+--- !u!4 &1452723782210001270
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840628538574}
+  m_GameObject: {fileID: 1452723782210001257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5046176840387716615}
+  m_Father: {fileID: 1452723781969179552}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5046176840628538576
+--- !u!212 &1452723782210001271
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176840628538574}
+  m_GameObject: {fileID: 1452723782210001257}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -355,7 +235,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &5046176841196905935
+--- !u!61 &1762018510537930492
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452723782210001257}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0976733, y: -0.16604447}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.8525324, y: 3.9631867}
+  m_EdgeRadius: 0
+--- !u!114 &5991605081950229301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452723782210001257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584cbad4d844da349bc10237dc1e23e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - I did it! It stopped!
+  - Now if I can only get home with the spores I have collected.
+  - Onward!
+  playerInRange: 0
+  dialogueLength: 0
+  isNPC: 1
+  camShake: 0
+  shakeAmt: 0.15
+  shakeTime: 0.3
+--- !u!1 &1452723782778892392
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,10 +291,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5046176841196905938}
-  - component: {fileID: 5046176841196905937}
-  - component: {fileID: 5046176841196905940}
-  - component: {fileID: 5046176841196905939}
+  - component: {fileID: 1452723782778892405}
+  - component: {fileID: 1452723782778892406}
+  - component: {fileID: 1452723782778892403}
+  - component: {fileID: 1452723782778892404}
+  - component: {fileID: 716399026905792693}
+  - component: {fileID: 8277379621889585799}
+  - component: {fileID: 2445549675678271642}
   m_Layer: 0
   m_Name: DrillOn_art
   m_TagString: Untagged
@@ -374,28 +305,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5046176841196905938
+--- !u!4 &1452723782778892405
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176841196905935}
+  m_GameObject: {fileID: 1452723782778892392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5046176840387716615}
+  m_Father: {fileID: 1452723781969179552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5046176841196905937
+--- !u!212 &1452723782778892406
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176841196905935}
+  m_GameObject: {fileID: 1452723782778892392}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -441,14 +372,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5046176841196905940
+--- !u!95 &1452723782778892403
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176841196905935}
+  m_GameObject: {fileID: 1452723782778892392}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4c61ca73865b6e04381c88ad9ba034d2, type: 2}
@@ -461,13 +392,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &5046176841196905939
+--- !u!61 &1452723782778892404
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5046176841196905935}
+  m_GameObject: {fileID: 1452723782778892392}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -487,3 +418,148 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.265119, y: 2.1163101}
   m_EdgeRadius: 0
+--- !u!61 &716399026905792693
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452723782778892392}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0976733, y: -0.16604447}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.8525324, y: 3.9631867}
+  m_EdgeRadius: 0
+--- !u!114 &8277379621889585799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452723782778892392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584cbad4d844da349bc10237dc1e23e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - What is this???
+  - Is it destroying the Great Mushroom??
+  - I need to turn this off!
+  - It looks like it needs 3 keys to shut down.
+  playerInRange: 0
+  dialogueLength: 0
+  isNPC: 1
+  camShake: 0
+  shakeAmt: 0.15
+  shakeTime: 0.3
+--- !u!82 &2445549675678271642
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452723782778892392}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: a64de651b230a9a4388b5ce83964fa15, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2befb4d9d29f23d43adecb4542404aea, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 0.3
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
